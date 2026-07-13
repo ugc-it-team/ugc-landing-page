@@ -1,0 +1,36 @@
+/* ===========================================================================
+   UGConnect — Webfonts
+   ---------------------------------------------------------------------------
+   GARET (primary / display) and POPPINS (secondary / UI) are both now
+   self-hosted from the uploaded brand files in /fonts. Garet ships in two
+   weights only: Book and Heavy. To keep display type LIGHT and refined we map
+   Book to the whole 400–700 range (so default headings render Book) and
+   reserve Heavy for weight 800 ONLY — used sparingly as an accent (big stat
+   numbers). Don't set display text to 800 unless you want the heavy punch.
+   =========================================================================== */
+
+/* ---- Garet (display) — self-hosted brand files --------------------------- */
+/* Book covers 400–700 (the elegant default) */
+@font-face { font-family:'Garet'; font-weight:400; font-style:normal; font-display:swap; src:url('../fonts/Garet-Book.woff2') format('woff2'), url('../fonts/Garet-Book.woff') format('woff'); }
+@font-face { font-family:'Garet'; font-weight:500; font-style:normal; font-display:swap; src:url('../fonts/Garet-Book.woff2') format('woff2'), url('../fonts/Garet-Book.woff') format('woff'); }
+@font-face { font-family:'Garet'; font-weight:600; font-style:normal; font-display:swap; src:url('../fonts/Garet-Book.woff2') format('woff2'), url('../fonts/Garet-Book.woff') format('woff'); }
+@font-face { font-family:'Garet'; font-weight:700; font-style:normal; font-display:swap; src:url('../fonts/Garet-Book.woff2') format('woff2'), url('../fonts/Garet-Book.woff') format('woff'); }
+/* Heavy reserved for 800 — accent only */
+@font-face { font-family:'Garet'; font-weight:800; font-style:normal; font-display:swap; src:url('../fonts/Garet-Heavy.woff2') format('woff2'), url('../fonts/Garet-Heavy.woff') format('woff'); }
+
+/* ---- Poppins (UI) — self-hosted from uploaded brand files ----------------- */
+@font-face { font-family:'Poppins'; font-weight:300; font-style:normal; font-display:swap; src:url('../fonts/Poppins-Light.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:300; font-style:italic; font-display:swap; src:url('../fonts/Poppins-LightItalic.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:400; font-style:normal; font-display:swap; src:url('../fonts/Poppins-Regular.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:400; font-style:italic; font-display:swap; src:url('../fonts/Poppins-Italic.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:500; font-style:normal; font-display:swap; src:url('../fonts/Poppins-Medium.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:500; font-style:italic; font-display:swap; src:url('../fonts/Poppins-MediumItalic.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:600; font-style:normal; font-display:swap; src:url('../fonts/Poppins-SemiBold.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:600; font-style:italic; font-display:swap; src:url('../fonts/Poppins-SemiBoldItalic.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:700; font-style:normal; font-display:swap; src:url('../fonts/Poppins-Bold.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:700; font-style:italic; font-display:swap; src:url('../fonts/Poppins-BoldItalic.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:800; font-style:normal; font-display:swap; src:url('../fonts/Poppins-ExtraBold.ttf') format('truetype'); }
+@font-face { font-family:'Poppins'; font-weight:900; font-style:normal; font-display:swap; src:url('../fonts/Poppins-Black.ttf') format('truetype'); }
+
+/* Garet ships as Book + Heavy only. If you receive more weights (e.g. a true
+   Light or Bold), drop them in /fonts and add matching @font-face rules. */

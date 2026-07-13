@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5D2978">
+<meta name="description" content="UGConnect conecta marcas con creadores UGC para lanzar campañas auténticas, gestionar entregables y centralizar pagos sin agencias.">
+<title>UGConnect | Contenido auténtico para tu marca</title>
+
+<link rel="stylesheet" href="_ds/ugconnect/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/ugconnect/tokens/colors.css">
+<link rel="stylesheet" href="_ds/ugconnect/tokens/typography.css">
+<link rel="stylesheet" href="_ds/ugconnect/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/ugconnect/tokens/base.css">
+<link rel="stylesheet" href="_ds/ugconnect/styles.css">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); overflow-x: hidden; }
+  #root { min-height: 100vh; }
+
+  .ug-container { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  @media (max-width: 640px){ .ug-container { padding-left: 20px; padding-right: 20px; } }
+
+  .ug-eyebrow {
+    font-family: var(--font-ui); font-weight: 600; font-size: var(--text-overline);
+    letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--brand-secondary);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .ug-eyebrow::before { content:""; width: 18px; height: 2px; border-radius: 2px; background: var(--brand-soft); display:inline-block; }
+  .ug-eyebrow.center::after { content:""; width: 18px; height: 2px; border-radius: 2px; background: var(--brand-soft); display:inline-block; }
+
+  h1,h2,h3,h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); will-change: opacity, transform; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce){ .reveal { opacity:1 !important; transform:none !important; transition:none; } }
+  body.no-reveal .reveal { opacity:1 !important; transform:none !important; }
+
+  @keyframes ug-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ug-marquee { overflow: hidden; }
+  .ug-marquee-track { display:flex; width:max-content; animation: ug-marquee 38s linear infinite; }
+  .ug-marquee:hover .ug-marquee-track { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce){ .ug-marquee-track { animation: none; } }
+
+  input[type=range].ug-range { -webkit-appearance:none; appearance:none; width:100%; height:8px; border-radius:999px;
+    background: var(--purple-100); outline: none; cursor: pointer; }
+  input[type=range].ug-range::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:26px; height:26px; border-radius:50%;
+    background: var(--brand-primary); border: 4px solid var(--white); box-shadow: var(--shadow-md); cursor: grab; transition: transform .12s var(--ease-out); }
+  input[type=range].ug-range::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.08); }
+  input[type=range].ug-range::-moz-range-thumb { width:22px; height:22px; border-radius:50%; background: var(--brand-primary); border: 4px solid var(--white); box-shadow: var(--shadow-md); cursor: grab; }
+
+  @keyframes ug-pulse { 0%,100%{ box-shadow: 0 0 0 0 rgba(31,138,91,.5);} 50%{ box-shadow: 0 0 0 6px rgba(31,138,91,0);} }
+  .ug-live-dot { animation: ug-pulse 2s infinite; }
+  @keyframes ug-grow { from { width: 0; } }
+
+  .ug-link { font-family: var(--font-ui); font-weight: 500; font-size: 14.5px; color: var(--text-body); text-decoration: none; transition: color .15s var(--ease-out); }
+  .ug-link:hover { color: var(--brand-primary); text-decoration: none; }
+  .ug-faq-body { overflow: hidden; transition: height .32s var(--ease-out); }
+  ::selection { background: var(--purple-200); color: var(--purple-900); }
+
+  * { -webkit-tap-highlight-color: rgba(93,41,120,.18); }
+  section[id] { scroll-margin-top: 86px; }
+  @media (max-width: 640px){ input, select, textarea { font-size: 16px !important; } }
+  @media (max-width: 560px){
+    .ug-cta-row { flex-direction: column !important; align-items: stretch !important; }
+    .ug-cta-row > a { width: 100%; }
+    .ug-cta-row > a > button { width: 100% !important; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="_ds/ugconnect/_ds_bundle.js"></script>
+<script src="assets/runtime-config.js"></script>
+<script src="assets/app.bundle.js"></script>
+</body>
+</html>

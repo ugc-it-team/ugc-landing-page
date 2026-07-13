@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5D2978">
+<meta name="description" content="Condiciones aplicables a creadores UGC que participan en campañas gestionadas a través de UGConnect.">
+<title>Creadores | Términos UGConnect</title>
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/fonts.css">
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/colors.css">
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/typography.css">
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/base.css">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--surface-sunken, #F5EFF8);
+    color: var(--text-strong, #1b1521);
+    font-family: var(--font-ui), Poppins, system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  .legal-shell { min-height: 100vh; }
+  .legal-top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(93,41,120,.12);
+    background: rgba(255,255,255,.86);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+  .legal-nav {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .brand {
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: -.02em;
+    text-decoration: none;
+  }
+  .brand span:first-child { color: var(--brand-primary, #5D2978); }
+  .brand span:last-child { color: var(--text-strong, #1b1521); }
+  .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(93,41,120,.18);
+    background: white;
+    color: var(--brand-primary, #5D2978);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13.5px;
+  }
+  .button.primary { background: var(--brand-primary, #5D2978); color: white; border-color: var(--brand-primary, #5D2978); }
+  .legal-hero {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(42px, 7vw, 86px) 0 clamp(28px, 5vw, 52px);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-secondary, #8852A2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: var(--brand-soft, #B78ACD); }
+  h1 {
+    max-width: 860px;
+    margin: 16px 0 0;
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-size: clamp(34px, 6.2vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+  }
+  .lead {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: var(--text-muted, #6e6676);
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.62;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    color: var(--text-body, #3f3847);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .legal-layout {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 0 0 clamp(64px, 8vw, 100px);
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 44px);
+    align-items: start;
+  }
+  .toc {
+    position: sticky;
+    top: 96px;
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 12px 30px rgba(43, 16, 57, .06);
+  }
+  .toc strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-strong, #1b1521);
+    font-size: 13px;
+  }
+  .toc nav { display: grid; gap: 4px; }
+  .toc a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--text-muted, #6e6676);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .toc a:hover { background: var(--purple-50, #F5EFF8); color: var(--brand-primary, #5D2978); }
+  .legal-card {
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    border-radius: 22px;
+    padding: clamp(24px, 4.5vw, 52px);
+    box-shadow: 0 18px 46px rgba(43, 16, 57, .08);
+  }
+  .legal-section {
+    scroll-margin-top: 100px;
+    padding-top: clamp(22px, 3vw, 32px);
+    margin-top: clamp(22px, 3vw, 32px);
+    border-top: 1px solid rgba(93,41,120,.12);
+  }
+  .legal-section:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+  h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+  p {
+    margin: 12px 0 0;
+    color: var(--text-body, #3f3847);
+    font-size: 15.5px;
+    line-height: 1.78;
+  }
+  p strong { color: var(--text-strong, #1b1521); }
+  .legal-note {
+    margin-top: 32px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--purple-50, #F5EFF8);
+    color: var(--text-body, #3f3847);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  @media (max-width: 860px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+    .toc nav { max-height: 260px; overflow: auto; }
+  }
+  @media (max-width: 560px) {
+    .legal-nav { width: min(100% - 32px, 1120px); min-height: 66px; }
+    .legal-hero, .legal-layout { width: min(100% - 32px, 1120px); }
+    .nav-actions .button:first-child { display: none; }
+    .button { width: auto; min-height: 40px; padding-inline: 13px; }
+    .legal-card { border-radius: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="legal-shell">
+  <header class="legal-top">
+    <div class="legal-nav">
+      <a class="brand" href="../index.html" aria-label="UGConnect"><span>UGC</span><span>onnect</span></a>
+      <div class="nav-actions">
+        <a class="button" href="../index.html#demo">Agenda tu demo</a>
+        <a class="button primary" href="../index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <span class="eyebrow">Términos UGConnect</span>
+      <h1>TÉRMINOS Y CONDICIONES DE SERVICIO – UGCONNECT (2026)</h1>
+      <p class="lead">Condiciones aplicables a creadores UGC que participan en campañas gestionadas a través de UGConnect.</p>
+      <div class="meta-row">
+        <span class="pill">Audiencia: Creadores</span>
+        <span class="pill">Versión 2026</span>
+        <span class="pill">Lima, Perú</span>
+      </div>
+    </section>
+
+    <div class="legal-layout">
+      <aside class="toc" aria-label="Índice">
+        <strong>Índice</strong>
+        <nav>
+              <a href="#section-1-naturaleza-de-la-relación">1. Naturaleza de la Relación</a>
+              <a href="#section-2-cumplimiento-de-entregables-y-penalidades">2. Cumplimiento de Entregables y Penalidades</a>
+              <a href="#section-3-proceso-de-edición-y-cambios">3. Proceso de Edición y Cambios</a>
+              <a href="#section-4-gestión-documental-y-liberación-de-pagos">4. Gestión Documental y Liberación de Pagos</a>
+              <a href="#section-5-derechos-sobre-el-contenido">5. Derechos sobre el Contenido</a>
+              <a href="#section-6-confidencialidad-y-conducta">6. Confidencialidad y Conducta</a>
+              <a href="#section-7-limitación-de-responsabilidad-y-fuerza-mayor">7. Limitación de Responsabilidad y Fuerza Mayor</a>
+              <a href="#section-8-protección-de-datos-y-uso-de-analytics">8. Protección de Datos y Uso de Analytics</a>
+              <a href="#section-9-resolución-de-conflictos">9. Resolución de Conflictos</a>
+        </nav>
+      </aside>
+      <article class="legal-card">
+          <section class="legal-section" id="section-1-naturaleza-de-la-relación">
+          <h2>1. Naturaleza de la Relación</h2>
+          <p>El Creador declara actuar como prestador de servicios independiente. La utilización de UGConnect no genera una relación laboral, de subordinación o dependencia entre el Creador y UGConnect ni con la Marca/Agencia contratante. El Creador presta sus servicios bajo su propia responsabilidad y asume todas las obligaciones fiscales y previsionales que le correspondan según la legislación vigente.</p>
+        </section>
+        <section class="legal-section" id="section-2-cumplimiento-de-entregables-y-penalidades">
+          <h2>2. Cumplimiento de Entregables y Penalidades</h2>
+          <p>Obligación de Cumplimiento: El Creador está estrictamente obligado a seguir los lineamientos, requisitos técnicos y creativos detallados en el brief de la campaña.</p>
+          <p>Evaluación del Entregable: Tras la entrega, la plataforma registrará la validación de los entregables. Si se evidencia que el contenido no cumple con lo solicitado en el brief, se aplicará una penalidad por incumplimiento.</p>
+          <p>Efecto de la Penalidad: La penalidad consiste en la retención total y pérdida del derecho a cobro por parte del Creador. En este escenario, el Creador no recibirá abono alguno y los fondos custodiados serán devueltos a la cuenta de la Marca para su libre disposición o reasignación.</p>
+        </section>
+        <section class="legal-section" id="section-3-proceso-de-edición-y-cambios">
+          <h2>3. Proceso de Edición y Cambios</h2>
+          <p>Se permite un máximo de 2 cambios por cada fase (guion, borrador, video final) sin costo adicional.</p>
+          <p>Cualquier solicitud de cambios adicionales fuera de este límite tendrá un fee administrativo de 20.00 Soles, cuya ejecución estará supeditada al pago previo por parte de la Marca a través de la plataforma.</p>
+        </section>
+        <section class="legal-section" id="section-4-gestión-documental-y-liberación-de-pagos">
+          <h2>4. Gestión Documental y Liberación de Pagos</h2>
+          <p>Plazo de Regularización: Es responsabilidad exclusiva del Creador presentar la documentación legal válida (ej. recibo por honorarios o factura) en un plazo máximo de 5 días hábiles tras la aprobación del contenido final.</p>
+          <p>Consecuencia por Incumplimiento: Si el Creador no presenta la documentación en el plazo establecido, no podrá disponer de su pago en ese momento. En dicho caso, la Marca quedará facultada automáticamente para hacer uso del contenido, mientras el Creador mantiene la obligación de regularizar sus documentos para el abono posterior.</p>
+          <p>Errores Bancarios: UGConnect no es responsable por errores en la información bancaria suministrada. Los costos adicionales por transferencias fallidas, comisiones interbancarias o reversiones de pago por error del usuario serán deducidos del monto a abonar al Creador.</p>
+        </section>
+        <section class="legal-section" id="section-5-derechos-sobre-el-contenido">
+          <h2>5. Derechos sobre el Contenido</h2>
+          <p>Cesión de Derechos: Al recibir el pago, el Creador transfiere la totalidad de los derechos comerciales sobre el contenido generado a la Marca, para su libre uso y explotación.</p>
+          <p>Garantía de Originalidad: El Creador garantiza que todo el contenido es original y no infringe derechos de terceros. Cualquier reclamo legal o económico por falta de originalidad será asumido exclusivamente por el Creador, eximiendo a UGConnect.</p>
+          <p>Uso Promocional por UGConnect: El Creador otorga a UGConnect una licencia no exclusiva para utilizar el contenido generado con fines promocionales o comerciales para exhibir las capacidades de la plataforma.</p>
+        </section>
+        <section class="legal-section" id="section-6-confidencialidad-y-conducta">
+          <h2>6. Confidencialidad y Conducta</h2>
+          <p>Confidencialidad: El Creador se obliga a mantener estricta reserva sobre información, briefs, productos o estrategias compartidas por la Marca.</p>
+          <p>Conducta: UGConnect no supervisa ni avala el comportamiento público de los Creadores fuera de la plataforma. Cualquier conducta indebida es responsabilidad exclusiva del Creador, eximiendo a UGConnect de daños reputacionales.</p>
+        </section>
+        <section class="legal-section" id="section-7-limitación-de-responsabilidad-y-fuerza-mayor">
+          <h2>7. Limitación de Responsabilidad y Fuerza Mayor</h2>
+          <p>Responsabilidad: UGConnect no garantiza el éxito comercial de la campaña.</p>
+          <p>Fuerza Mayor: UGConnect no será responsable por fallos en servicios en la nube (ej. Firebase/Google Cloud), ciberataques o fallos de telecomunicaciones.</p>
+          <p>Tope de Responsabilidad: En caso de responsabilidad legal, el monto máximo reclamable a UGConnect no excederá el valor de los servicios percibidos por la plataforma en la operación específica.</p>
+        </section>
+        <section class="legal-section" id="section-8-protección-de-datos-y-uso-de-analytics">
+          <h2>8. Protección de Datos y Uso de Analytics</h2>
+          <p>El Creador autoriza a UGConnect a tratar sus datos para la gestión operativa, así como a utilizar datos agregados y anonimizados derivados del uso de la plataforma para fines de mejora del servicio y reportes de industria.</p>
+        </section>
+        <section class="legal-section" id="section-9-resolución-de-conflictos">
+          <h2>9. Resolución de Conflictos</h2>
+          <p>Cualquier controversia será gestionada a través del proceso de mediación interna de UGConnect. Las decisiones basadas en los registros de la plataforma (app_users y documentos vinculados) serán definitivas y vinculantes.</p>
+        </section>
+        <div class="legal-note">
+          Este documento HTML presenta los términos vigentes de UGConnect en un formato optimizado para lectura web.
+        </div>
+      </article>
+    </div>
+  </main>
+</div>
+</body>
+</html>

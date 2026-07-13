@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5D2978">
+<meta name="description" content="Condiciones aplicables a marcas, equipos de marketing y agencias que usan UGConnect para gestionar campañas UGC.">
+<title>Marcas y agencias | Términos UGConnect</title>
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/fonts.css">
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/colors.css">
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/typography.css">
+<link rel="stylesheet" href="../_ds/ugconnect/tokens/base.css">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--surface-sunken, #F5EFF8);
+    color: var(--text-strong, #1b1521);
+    font-family: var(--font-ui), Poppins, system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  .legal-shell { min-height: 100vh; }
+  .legal-top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(93,41,120,.12);
+    background: rgba(255,255,255,.86);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+  .legal-nav {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .brand {
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: -.02em;
+    text-decoration: none;
+  }
+  .brand span:first-child { color: var(--brand-primary, #5D2978); }
+  .brand span:last-child { color: var(--text-strong, #1b1521); }
+  .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(93,41,120,.18);
+    background: white;
+    color: var(--brand-primary, #5D2978);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13.5px;
+  }
+  .button.primary { background: var(--brand-primary, #5D2978); color: white; border-color: var(--brand-primary, #5D2978); }
+  .legal-hero {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(42px, 7vw, 86px) 0 clamp(28px, 5vw, 52px);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-secondary, #8852A2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: var(--brand-soft, #B78ACD); }
+  h1 {
+    max-width: 860px;
+    margin: 16px 0 0;
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-size: clamp(34px, 6.2vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+  }
+  .lead {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: var(--text-muted, #6e6676);
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.62;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    color: var(--text-body, #3f3847);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .legal-layout {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 0 0 clamp(64px, 8vw, 100px);
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 44px);
+    align-items: start;
+  }
+  .toc {
+    position: sticky;
+    top: 96px;
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 12px 30px rgba(43, 16, 57, .06);
+  }
+  .toc strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-strong, #1b1521);
+    font-size: 13px;
+  }
+  .toc nav { display: grid; gap: 4px; }
+  .toc a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--text-muted, #6e6676);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .toc a:hover { background: var(--purple-50, #F5EFF8); color: var(--brand-primary, #5D2978); }
+  .legal-card {
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    border-radius: 22px;
+    padding: clamp(24px, 4.5vw, 52px);
+    box-shadow: 0 18px 46px rgba(43, 16, 57, .08);
+  }
+  .legal-section {
+    scroll-margin-top: 100px;
+    padding-top: clamp(22px, 3vw, 32px);
+    margin-top: clamp(22px, 3vw, 32px);
+    border-top: 1px solid rgba(93,41,120,.12);
+  }
+  .legal-section:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+  h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+  p {
+    margin: 12px 0 0;
+    color: var(--text-body, #3f3847);
+    font-size: 15.5px;
+    line-height: 1.78;
+  }
+  p strong { color: var(--text-strong, #1b1521); }
+  .legal-note {
+    margin-top: 32px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--purple-50, #F5EFF8);
+    color: var(--text-body, #3f3847);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  @media (max-width: 860px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+    .toc nav { max-height: 260px; overflow: auto; }
+  }
+  @media (max-width: 560px) {
+    .legal-nav { width: min(100% - 32px, 1120px); min-height: 66px; }
+    .legal-hero, .legal-layout { width: min(100% - 32px, 1120px); }
+    .nav-actions .button:first-child { display: none; }
+    .button { width: auto; min-height: 40px; padding-inline: 13px; }
+    .legal-card { border-radius: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="legal-shell">
+  <header class="legal-top">
+    <div class="legal-nav">
+      <a class="brand" href="../index.html" aria-label="UGConnect"><span>UGC</span><span>onnect</span></a>
+      <div class="nav-actions">
+        <a class="button" href="../index.html#demo">Agenda tu demo</a>
+        <a class="button primary" href="../index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <span class="eyebrow">Términos UGConnect</span>
+      <h1>TÉRMINOS Y CONDICIONES DE SERVICIO – UGCONNECT (2026)</h1>
+      <p class="lead">Condiciones aplicables a marcas, equipos de marketing y agencias que usan UGConnect para gestionar campañas UGC.</p>
+      <div class="meta-row">
+        <span class="pill">Audiencia: Marcas y agencias</span>
+        <span class="pill">Versión 2026</span>
+        <span class="pill">Lima, Perú</span>
+      </div>
+    </section>
+
+    <div class="legal-layout">
+      <aside class="toc" aria-label="Índice">
+        <strong>Índice</strong>
+        <nav>
+              <a href="#section-1-naturaleza-y-contrato-de-mandato">1. Naturaleza y Contrato de Mandato</a>
+              <a href="#section-2-gestión-financiera-y-fondos">2. Gestión Financiera y Fondos</a>
+              <a href="#section-3-cancelaciones-y-política-de-cierre-de-campaña">3. Cancelaciones y Política de Cierre de Campaña</a>
+              <a href="#section-4-propiedad-y-resultados">4. Propiedad y Resultados</a>
+              <a href="#section-5-limitación-de-responsabilidad-y-fuerza-mayor">5. Limitación de Responsabilidad y Fuerza Mayor</a>
+              <a href="#section-6-protección-de-datos-y-uso-de-analytics">6. Protección de Datos y Uso de Analytics</a>
+              <a href="#section-7-modificación-de-términos-y-resolución-de-conflictos">7. Modificación de Términos y Resolución de Conflictos</a>
+        </nav>
+      </aside>
+      <article class="legal-card">
+          <section class="legal-section" id="section-1-naturaleza-y-contrato-de-mandato">
+          <h2>1. Naturaleza y Contrato de Mandato</h2>
+          <p>UGConnect es una plataforma tecnológica de gestión de colaboraciones que actúa exclusivamente como facilitador. Mediante la aceptación de estos términos, la Marca/Agencia otorga un mandato específico y sin representación a UGConnect, conforme a las disposiciones del Código Civil Peruano, para que este actúe exclusivamente como custodio y administrador de los fondos destinados al pago de los creadores. La Marca reconoce expresamente que UGConnect no presta servicios de agencia de publicidad, ni vende servicios de marketing, sino que actúa como intermediario operativo, salvo un acuerdo expreso contrario. Nota: La plataforma conservará un registro digital (traza) con la IP, fecha, hora y datos del usuario al momento de la aceptación, el cual constituirá prueba plena de la otorgación del mandato.</p>
+        </section>
+        <section class="legal-section" id="section-2-gestión-financiera-y-fondos">
+          <h2>2. Gestión Financiera y Fondos</h2>
+          <p>Naturaleza de los Fondos: Los depósitos son &quot;Fondos en Custodia por Mandato de Terceros&quot; y deben registrarse contablemente por la Marca como un pasivo (Cuenta 46: Cuentas por pagar diversas - Terceros) hasta su liberación final al creador.</p>
+          <p>Sistema: Se utiliza un sistema de créditos donde 1 Sol (S/ 1.00) = 1 Crédito.</p>
+          <p>Vigencia: Los créditos no utilizados en campañas activas tienen una vigencia de 12 meses, tras los cuales UGConnect podrá aplicar una comisión de mantenimiento.</p>
+        </section>
+        <section class="legal-section" id="section-3-cancelaciones-y-política-de-cierre-de-campaña">
+          <h2>3. Cancelaciones y Política de Cierre de Campaña</h2>
+          <p>Ventana de Cancelación: La Marca podrá solicitar la cancelación de una campaña únicamente después de haber aceptado a los creadores y siempre que la campaña no haya iniciado ninguna etapa de avance operativo. Se considera &quot;avance operativo&quot; el inicio de la fase de creación de guion, la recepción de borradores o cualquier otra etapa de producción posterior a la simple aceptación del creador.</p>
+          <p>Penalidad por Cancelación: Toda cancelación realizada dentro de esta ventana estará sujeta a una penalidad del 15% aplicada sobre el monto total de los fondos en custodia, correspondiente a gastos operativos de gestión. El saldo restante será devuelto a la Marca.</p>
+          <p>Cierre de Oportunidad de Cancelación: Una vez que la campaña avance a cualquier etapa operativa (ej. inicio de la fase de guion), no se admitirá la cancelación bajo ninguna circunstancia. La Marca reconoce que, al iniciar la ejecución, los creadores han destinado tiempo y recursos exclusivos, por lo que el pago se considera un compromiso firme e irrevocable.</p>
+        </section>
+        <section class="legal-section" id="section-4-propiedad-y-resultados">
+          <h2>4. Propiedad y Resultados</h2>
+          <p>Transferencia de Derechos: Tras la validación final del entregable, los derechos comerciales se transfieren automáticamente a la Marca.</p>
+          <p>Responsabilidad: UGConnect no garantiza resultados comerciales ni se hace responsable por la calidad estratégica del contenido; la Marca es responsable de evaluar la idoneidad del creador. La Marca garantiza que los briefs y productos enviados son lícitos y no vulneran derechos de terceros.</p>
+        </section>
+        <section class="legal-section" id="section-5-limitación-de-responsabilidad-y-fuerza-mayor">
+          <h2>5. Limitación de Responsabilidad y Fuerza Mayor</h2>
+          <p>Limitación: En caso de responsabilidad legal, el monto máximo reclamable a UGConnect no excederá el valor de los fees de gestión percibidos por la plataforma en la operación específica.</p>
+          <p>Fuerza Mayor: UGConnect no será responsable por fallos en servicios en la nube (ej. Firebase/Google Cloud), ciberataques o fallos de telecomunicaciones.</p>
+        </section>
+        <section class="legal-section" id="section-6-protección-de-datos-y-uso-de-analytics">
+          <h2>6. Protección de Datos y Uso de Analytics</h2>
+          <p>Privacidad: Los datos se tratarán conforme a la normativa vigente para la gestión de la operación.</p>
+          <p>Uso de Datos: El usuario autoriza a UGConnect a utilizar datos agregados y anonimizados derivados del uso de la plataforma para fines de mejora del servicio, estudios de mercado y reportes de industria.</p>
+        </section>
+        <section class="legal-section" id="section-7-modificación-de-términos-y-resolución-de-conflictos">
+          <h2>7. Modificación de Términos y Resolución de Conflictos</h2>
+          <p>Modificaciones: UGConnect se reserva el derecho de modificar estos términos en cualquier momento. El uso continuado de la plataforma implica la aceptación de los nuevos términos.</p>
+        </section>
+        <div class="legal-note">
+          Este documento HTML presenta los términos vigentes de UGConnect en un formato optimizado para lectura web.
+        </div>
+      </article>
+    </div>
+  </main>
+</div>
+</body>
+</html>

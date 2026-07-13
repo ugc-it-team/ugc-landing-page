@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+dist/
+.cache/
+.env
+.env.local
+.thumbnail
+UGConnect Landing*.html
+uploads/
+_ds/ugconnect-design-system-*/
