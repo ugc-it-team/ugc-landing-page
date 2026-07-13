@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5D2978">
+<meta name="description" content="Política de privacidad de UGConnect para marcas, agencias y creadores que usan la plataforma.">
+<title>Política de privacidad | UGConnect</title>
+<link rel="stylesheet" href="../../_ds/ugconnect/tokens/fonts.css">
+<link rel="stylesheet" href="../../_ds/ugconnect/tokens/colors.css">
+<link rel="stylesheet" href="../../_ds/ugconnect/tokens/typography.css">
+<link rel="stylesheet" href="../../_ds/ugconnect/tokens/base.css">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--surface-sunken, #F5EFF8);
+    color: var(--text-strong, #1b1521);
+    font-family: var(--font-ui), Poppins, system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  .legal-shell { min-height: 100vh; }
+  .legal-top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(93,41,120,.12);
+    background: rgba(255,255,255,.86);
+    backdrop-filter: saturate(180%) blur(14px);
+  }
+  .legal-nav {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .brand {
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: -.02em;
+    text-decoration: none;
+  }
+  .brand span:first-child { color: var(--brand-primary, #5D2978); }
+  .brand span:last-child { color: var(--text-strong, #1b1521); }
+  .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(93,41,120,.18);
+    background: white;
+    color: var(--brand-primary, #5D2978);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13.5px;
+  }
+  .button.primary { background: var(--brand-primary, #5D2978); color: white; border-color: var(--brand-primary, #5D2978); }
+  .legal-hero {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(42px, 7vw, 86px) 0 clamp(28px, 5vw, 52px);
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-secondary, #8852A2);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: var(--brand-soft, #B78ACD); }
+  h1 {
+    max-width: 860px;
+    margin: 16px 0 0;
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-size: clamp(34px, 6.2vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+  }
+  .lead {
+    max-width: 760px;
+    margin: 20px 0 0;
+    color: var(--text-muted, #6e6676);
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.62;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    color: var(--text-body, #3f3847);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .legal-layout {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 0 0 clamp(64px, 8vw, 100px);
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 44px);
+    align-items: start;
+  }
+  .toc {
+    position: sticky;
+    top: 96px;
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 12px 30px rgba(43, 16, 57, .06);
+  }
+  .toc strong {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-strong, #1b1521);
+    font-size: 13px;
+  }
+  .toc nav { display: grid; gap: 4px; }
+  .toc a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 10px;
+    color: var(--text-muted, #6e6676);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .toc a:hover { background: var(--purple-50, #F5EFF8); color: var(--brand-primary, #5D2978); }
+  .legal-card {
+    background: white;
+    border: 1px solid rgba(93,41,120,.12);
+    border-radius: 22px;
+    padding: clamp(24px, 4.5vw, 52px);
+    box-shadow: 0 18px 46px rgba(43, 16, 57, .08);
+  }
+  .legal-section {
+    scroll-margin-top: 100px;
+    padding-top: clamp(22px, 3vw, 32px);
+    margin-top: clamp(22px, 3vw, 32px);
+    border-top: 1px solid rgba(93,41,120,.12);
+  }
+  .legal-section:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+  h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-display), Poppins, system-ui, sans-serif;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+  p, li {
+    color: var(--text-body, #3f3847);
+    font-size: 15.5px;
+    line-height: 1.78;
+  }
+  p { margin: 12px 0 0; }
+  ul { margin: 12px 0 0; padding-left: 20px; }
+  li + li { margin-top: 8px; }
+  strong { color: var(--text-strong, #1b1521); }
+  .legal-note {
+    margin-top: 32px;
+    padding: 18px;
+    border-radius: 16px;
+    background: var(--purple-50, #F5EFF8);
+    color: var(--text-body, #3f3847);
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  @media (max-width: 860px) {
+    .legal-layout { grid-template-columns: 1fr; }
+    .toc { position: static; }
+    .toc nav { max-height: 260px; overflow: auto; }
+  }
+  @media (max-width: 560px) {
+    .legal-nav { width: min(100% - 32px, 1120px); min-height: 66px; }
+    .legal-hero, .legal-layout { width: min(100% - 32px, 1120px); }
+    .nav-actions .button:first-child { display: none; }
+    .button { width: auto; min-height: 40px; padding-inline: 13px; }
+    .legal-card { border-radius: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="legal-shell">
+  <header class="legal-top">
+    <div class="legal-nav">
+      <a class="brand" href="../../index.html" aria-label="UGConnect"><span>UGC</span><span>onnect</span></a>
+      <div class="nav-actions">
+        <a class="button" href="../../index.html#demo">Agenda tu demo</a>
+        <a class="button primary" href="../../index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-hero">
+      <span class="eyebrow">Privacidad UGConnect</span>
+      <h1>POLÍTICA DE PRIVACIDAD</h1>
+      <p class="lead">Esta política explica cómo UGConnect recopila, usa, conserva y protege los datos personales de marcas, agencias, creadores y visitantes.</p>
+      <div class="meta-row">
+        <span class="pill">Versión 2026</span>
+        <span class="pill">Lima, Perú</span>
+        <span class="pill">Última actualización: 13 de julio de 2026</span>
+      </div>
+    </section>
+
+    <div class="legal-layout">
+      <aside class="toc" aria-label="Índice">
+        <strong>Índice</strong>
+        <nav>
+          <a href="#section-1-responsable">1. Responsable del tratamiento</a>
+          <a href="#section-2-datos">2. Datos que tratamos</a>
+          <a href="#section-3-finalidades">3. Finalidades</a>
+          <a href="#section-4-base-legal">4. Base legal y consentimiento</a>
+          <a href="#section-5-comparticion">5. Encargados y terceros</a>
+          <a href="#section-6-conservacion">6. Conservación y seguridad</a>
+          <a href="#section-7-derechos">7. Derechos ARCO</a>
+          <a href="#section-8-cookies">8. Cookies y analítica</a>
+          <a href="#section-9-cambios">9. Cambios y contacto</a>
+        </nav>
+      </aside>
+
+      <article class="legal-card">
+        <section class="legal-section" id="section-1-responsable">
+          <h2>1. Responsable del tratamiento</h2>
+          <p>UGConnect es responsable del tratamiento de los datos personales recopilados a través de su sitio web, plataforma, formularios comerciales y canales de atención. Para consultas sobre privacidad, puedes escribir a <strong>it@ugconnect.pe</strong>.</p>
+        </section>
+
+        <section class="legal-section" id="section-2-datos">
+          <h2>2. Datos que tratamos</h2>
+          <p>Podemos tratar datos entregados directamente por el usuario o generados durante el uso de UGConnect, incluyendo:</p>
+          <ul>
+            <li>Datos de identificación y contacto, como nombre, correo, teléfono, empresa, cargo o redes sociales.</li>
+            <li>Información de perfil de creadores, portafolio, categorías de contenido, ubicación, disponibilidad y tarifas.</li>
+            <li>Información de campañas, briefs, entregables, aprobaciones, documentación de pago y comunicaciones operativas.</li>
+            <li>Datos técnicos y de uso, como dirección IP, dispositivo, navegador, eventos de navegación y métricas agregadas.</li>
+          </ul>
+        </section>
+
+        <section class="legal-section" id="section-3-finalidades">
+          <h2>3. Finalidades</h2>
+          <p>Usamos los datos para operar la plataforma, gestionar campañas UGC, coordinar entregables, facilitar pagos, atender solicitudes, prevenir fraude, cumplir obligaciones legales y mejorar nuestros productos. También podemos usar información agregada o anonimizada para reportes internos, analítica y desarrollo comercial.</p>
+        </section>
+
+        <section class="legal-section" id="section-4-base-legal">
+          <h2>4. Base legal y consentimiento</h2>
+          <p>El tratamiento se realiza sobre la base del consentimiento del usuario, la ejecución de una relación contractual o precontractual, el cumplimiento de obligaciones legales y el interés legítimo de UGConnect en mantener, proteger y mejorar sus servicios.</p>
+        </section>
+
+        <section class="legal-section" id="section-5-comparticion">
+          <h2>5. Encargados y terceros</h2>
+          <p>Podemos compartir datos con proveedores necesarios para operar UGConnect, como servicios de infraestructura, analítica, mensajería, gestión de formularios, pagos, almacenamiento y soporte. Estos proveedores solo deben tratar la información conforme a nuestras instrucciones y para las finalidades descritas.</p>
+          <p>Cuando una campaña lo requiera, cierta información de creadores podrá ser compartida con marcas o agencias participantes para evaluar perfiles, coordinar campañas y aprobar entregables.</p>
+        </section>
+
+        <section class="legal-section" id="section-6-conservacion">
+          <h2>6. Conservación y seguridad</h2>
+          <p>Conservamos los datos durante el tiempo necesario para cumplir las finalidades descritas, atender obligaciones legales, resolver disputas y mantener registros operativos. Aplicamos medidas razonables de seguridad técnica y organizativa para proteger la información contra acceso, alteración, pérdida o uso no autorizado.</p>
+        </section>
+
+        <section class="legal-section" id="section-7-derechos">
+          <h2>7. Derechos ARCO</h2>
+          <p>Los usuarios pueden solicitar acceso, rectificación, cancelación u oposición al tratamiento de sus datos personales, así como revocar su consentimiento cuando corresponda. Para ejercer estos derechos, escribe a <strong>it@ugconnect.pe</strong> indicando el derecho que deseas ejercer y la información necesaria para validar tu identidad.</p>
+        </section>
+
+        <section class="legal-section" id="section-8-cookies">
+          <h2>8. Cookies y analítica</h2>
+          <p>UGConnect puede utilizar cookies, tecnologías similares y herramientas de analítica para medir rendimiento, entender el uso del sitio, mejorar la experiencia y evaluar campañas. El usuario puede gestionar cookies desde la configuración de su navegador.</p>
+        </section>
+
+        <section class="legal-section" id="section-9-cambios">
+          <h2>9. Cambios y contacto</h2>
+          <p>Podemos actualizar esta política para reflejar cambios legales, operativos o tecnológicos. La versión vigente estará disponible en esta página. Para cualquier consulta sobre privacidad o tratamiento de datos, contáctanos en <strong>it@ugconnect.pe</strong>.</p>
+        </section>
+
+        <div class="legal-note">
+          Esta página es una versión web responsive de la política de privacidad de UGConnect. No reemplaza asesoría legal específica para casos particulares.
+        </div>
+      </article>
+    </div>
+  </main>
+</div>
+</body>
+</html>

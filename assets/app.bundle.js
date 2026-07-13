@@ -4021,6 +4021,9 @@ function Footer() {
     }, {
       label: 'T&C Creadores',
       href: 'legal/terminos-creadores-ugconnect.html'
+    }, {
+      label: 'Política de privacidad',
+      href: 'legal/privacy-policy/'
     }]
   }];
   return React.createElement("footer", {
