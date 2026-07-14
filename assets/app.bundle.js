@@ -2592,6 +2592,8 @@ function DashboardShowcase() {
       tone: st.tone
     })));
   }))))))), React.createElement("style", null, `
+        .ug-dash-shell{ scrollbar-width: none; -ms-overflow-style: none; }
+        .ug-dash-shell::-webkit-scrollbar{ display: none; }
         @media (max-width: 860px){
           .ug-dash-shell{ overflow: hidden !important; }
           .ug-dash-topbar, .ug-dash-side, .ug-campaign-head{ display:none !important; }
