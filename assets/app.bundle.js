@@ -347,41 +347,18 @@ function SectionHead({
   }, lead));
 }
 function Wordmark({
-  size = 22,
-  color = 'var(--text-strong)',
-  tagline = false
+  size = 22
 }) {
-  return React.createElement("span", {
+  /* Mismo logo que el panel web (ugconnect-logo-wordmark.png), tagline incluido. */
+  return React.createElement("img", {
+    src: "assets/ugconnect-logo-wordmark.png",
+    alt: "UGConnect — Connect. Colaborate. Create.",
     style: {
-      display: 'inline-flex',
-      flexDirection: 'column',
-      lineHeight: 1
+      height: Math.round(size * 1.5),
+      width: 'auto',
+      display: 'block'
     }
-  }, React.createElement("span", {
-    style: {
-      fontFamily: 'var(--font-display)',
-      fontWeight: 800,
-      fontSize: size,
-      letterSpacing: '-0.02em'
-    }
-  }, React.createElement("span", {
-    style: {
-      color: 'var(--brand-primary)'
-    }
-  }, "UGC"), React.createElement("span", {
-    style: {
-      color
-    }
-  }, "onnect")), tagline && React.createElement("span", {
-    style: {
-      fontFamily: 'var(--font-ui)',
-      fontWeight: 500,
-      fontSize: size * 0.34,
-      letterSpacing: '0.02em',
-      color: 'var(--text-muted)',
-      marginTop: 5
-    }
-  }, "Connect. Collaborate. Create."));
+  });
 }
 function useCountUp(target, {
   duration = 1400,
@@ -3628,7 +3605,9 @@ function DemoForm() {
       color: 'var(--text-body)',
       fontWeight: 500
     }
-  }, tx)))), React.createElement("div", {
+  }, tx)))), /* Testimonio oculto temporalmente hasta tener casos reales.
+     Para reactivar: elimina el `false &&`. */
+  false && React.createElement("div", {
     style: {
       background: 'var(--surface-sunken)',
       borderRadius: 'var(--radius-lg)',
