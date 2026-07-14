@@ -1,4 +1,4 @@
 window.UGCONFIG = {
   calcomUrl: "",
-  platformUrl: ""
+  platformUrl: "https://ugconnect.pe"
 };
