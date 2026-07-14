@@ -67,7 +67,7 @@ window.UGDATA = {
       features: [
         { t: "Hasta 10 creadores activos", on: true },
         { t: "Hasta 5 campañas en paralelo", on: true },
-        { t: "Automatización avanzada de RHe", on: true },
+        { t: "Automatización avanzada de RxH", on: true },
         { t: "Ejecutivo de cuenta asignado", on: true },
       ],
     },
@@ -82,7 +82,7 @@ window.UGDATA = {
       features: [
         { t: "Hasta 3 marcas cliente", on: true },
         { t: "Hasta 1 ejecutivo adicional", on: true },
-        { t: "Hasta 3 creadores por marca", on: true },
+        { t: "Hasta 3 campañas por marca", on: true },
         { t: "S/ 125 por marca adicional", on: true, muted: true },
       ],
     },
@@ -93,7 +93,7 @@ window.UGDATA = {
       features: [
         { t: "Hasta 6 marcas cliente", on: true },
         { t: "Hasta 3 ejecutivos adicionales", on: true },
-        { t: "Hasta 6 creadores por marca", on: true },
+        { t: "Hasta 6 campañas por marca", on: true },
         { t: "S/ 125 por marca adicional", on: true, muted: true },
       ],
     },
@@ -131,8 +131,8 @@ window.UGDATA = {
     { q: "¿Cuánto cuesta?", a: "Pagas solo un acceso mensual al software, desde S/ 179.99 para marcas independientes. El presupuesto que asignas a tus creadores va completo a ellos: la comisión de plataforma sobre ese monto es 0%." },
     { q: "¿Puedo elegir al creador?", a: "Sí. Filtras por nicho, ciudad, formato y disponibilidad, revisas su trabajo previo y decides con quién trabajar. También puedes recibir un match inteligente según tu brief." },
     { q: "¿Cuánto tarda una campaña?", a: "Publicar un brief toma unos minutos. Según el formato, los primeros entregables suelen llegar en pocos días. Todo el avance lo sigues en tiempo real desde tu tablero." },
-    { q: "¿Cómo funcionan los pagos?", a: "Cargas tu presupuesto en la plataforma y nosotros liberamos el pago al creador cuando se aprueba el entregable. Centralizamos validaciones y el manejo de recibos por honorarios (RHe)." },
-    { q: "¿Qué incluye la primera campaña gratis?", a: "Tu primer brief con 1 creador es 100% gratis: cero comisiones y cero costo de plataforma. Lo usas para lanzar un video piloto y comprobar cómo funciona todo." },
+    { q: "¿Cómo funcionan los pagos?", a: "Cargas tu presupuesto en la plataforma y nosotros liberamos el pago al creador cuando se aprueba el entregable. Centralizamos validaciones y el manejo de recibos por honorarios (RxH)." },
+    { q: "¿Qué incluye la primera campaña gratis?", a: "Tu primera campaña es 100% gratis, e incluye todo el acceso a la plataforma, para que puedas ver cómo UGConnect te ayuda a ahorrar horas de gestión manual, para que puedas enfocarte en los resultados." },
     { q: "¿Puedo usarlo si soy agencia?", a: "Sí. Tenemos planes para agencias que gestionan varias marcas: cuentas por cliente, usuarios ejecutivos y reporting consolidado en un solo lugar." },
   ],
 };
@@ -1003,7 +1003,7 @@ function HeroMockup() {
       fontWeight: 800,
       fontSize: 16
     }
-  }, "1 creador incluido"))));
+  }, "1 campa\xF1a gratis"))));
 }
 function Hero() {
   return React.createElement("section", {
@@ -1069,15 +1069,15 @@ function Hero() {
       color: 'var(--text-strong)',
       margin: 0
     }
-  }, "La publicidad de estudio ya no vende.", ' ', React.createElement("span", {
+  }, "Coordinar creadores por WhatsApp y Excel te cuesta +40 horas al mes.", ' ', React.createElement("span", {
     style: {
       color: 'var(--brand-primary)'
     }
-  }, "El consumidor busca autenticidad.")), React.createElement(Lead, {
+  }, "Nosotros lo resolvemos en una sola plataforma.")), React.createElement(Lead, {
     style: {
       fontSize: 'clamp(16px,1.7vw,19px)'
     }
-  }, "UGConnect automatiza la b\xFAsqueda, gesti\xF3n y pago de creadores UGC para que tu marca lance campa\xF1as aut\xE9nticas en minutos \u2014sin comisiones de agencia y con control total."), React.createElement("div", {
+  }, "UGConnect es la plataforma pionera en el Per\xFA que automatiza y centraliza la b\xFAsqueda, gesti\xF3n y pagos de creadores de contenido UGC \u2014 pensada para marcas y agencias digitales. Escala tus campa\xF1as, elimina el caos operativo y mant\xE9n control absoluto, sin comisiones ocultas."), React.createElement("div", {
     className: "ug-cta-row",
     style: {
       display: 'flex',
@@ -1266,8 +1266,8 @@ function Problema() {
   }, React.createElement(Container, null, React.createElement(Reveal, null, React.createElement(SectionHead, {
     center: true,
     eyebrow: "El problema",
-    title: "Coordinar creadores a mano es caro, lento y desordenado",
-    lead: "Las producciones de estudio cuestan miles y tardan semanas. Las agencias cobran comisi\xF3n y te quitan control. Y gestionar todo por WhatsApp, Excel y transferencias se vuelve un caos."
+    title: "Gestionar campa\xF1as a mano es caro, lento y desordenado",
+    lead: "Pierdes horas y recursos en trabajos manuales, perdiendo enfoque en brindarle resultados y valor a tus clientes."
   })), React.createElement("div", {
     className: "ug-compare",
     style: {
@@ -1323,7 +1323,7 @@ function Problema() {
   }, "Producci\xF3n de estudio costosa y lenta de agendar."), React.createElement(CompareRow, {
     icon: "x",
     kind: "bad"
-  }, "Agencias que cobran comisi\xF3n y reducen tu control."), React.createElement(CompareRow, {
+  }, "M\xE9tricas y resultados imposibles de consolidar por campa\xF1a."), React.createElement(CompareRow, {
     icon: "x",
     kind: "bad"
   }, "Creadores coordinados por WhatsApp, Excel y correos sueltos."), React.createElement(CompareRow, {
@@ -1332,7 +1332,7 @@ function Problema() {
   }, "Pagos manuales y recibos por honorarios que persigues uno a uno."), React.createElement(CompareRow, {
     icon: "x",
     kind: "bad"
-  }, "Contenido que se siente a comercial, no a recomendaci\xF3n real.")))), React.createElement(Reveal, {
+  }, "Contenido que guardas en un Drive compartido con posibilidad a perderse.")))), React.createElement(Reveal, {
     delay: 100
   }, React.createElement("div", {
     style: {
@@ -1398,13 +1398,13 @@ function Problema() {
   }, "Lanzas un brief en minutos y conectas con creadores reales."), React.createElement(CompareRow, {
     icon: "check",
     kind: "ok"
-  }, "Cero comisi\xF3n de intermediario sobre tu presupuesto de creadores."), React.createElement(CompareRow, {
-    icon: "check",
-    kind: "ok"
   }, "Todo el avance por campa\xF1a y por creador en un solo tablero."), React.createElement(CompareRow, {
     icon: "check",
     kind: "ok"
-  }, "Pagos y recibos (RHe) centralizados y validados por nosotros."), React.createElement(CompareRow, {
+  }, "Revisi\xF3n de observaciones, chats integrados y descarga de documentos a un solo click."), React.createElement(CompareRow, {
+    icon: "check",
+    kind: "ok"
+  }, "Pagos y recibos (RxH) centralizados y validados por nosotros."), React.createElement(CompareRow, {
     icon: "check",
     kind: "ok"
   }, "Contenido aut\xE9ntico, listo para TikTok, Reels y Ads.")))))), React.createElement("style", null, `@media (max-width: 760px){ .ug-compare{ grid-template-columns: 1fr !important; } }`));
@@ -1498,8 +1498,8 @@ function Solution() {
   }, React.createElement(UGX2.Container, null, React.createElement(UGX2.Reveal, null, React.createElement(UGX2.SectionHead, {
     center: true,
     eyebrow: "La soluci\xF3n",
-    title: "Todo lo que tu marca necesita para crear UGC",
-    lead: "Una sola plataforma para lanzar, encontrar talento y pagar. Sin agencias, sin hojas de c\xE1lculo, sin perseguir mensajes."
+    title: "Todo lo que necesitas para crear UGC",
+    lead: "Una sola plataforma para gestionar todas tus campa\xF1as UGC. Sin chats dispersos, sin hojas de c\xE1lculo, sin perseguir mensajes, sin ser propensos a cometer errores."
   })), React.createElement("div", {
     className: "ug-sol-grid",
     style: {
@@ -2037,7 +2037,7 @@ function Gallery() {
       letterSpacing: 'var(--tracking-tight)',
       color: '#fff'
     }
-  }, "As\xED se ve el UGC que crean para tu marca"), React.createElement("p", {
+  }, "As\xED se ve el contenido real que conecta para tus clientes"), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-ui)',
       fontSize: 'clamp(15px,1.6vw,18px)',
@@ -2394,7 +2394,7 @@ function DashboardShowcase() {
       color: 'rgba(255,255,255,.65)',
       marginTop: 2
     }
-  }, "1 creador, sin costo"))), React.createElement("div", {
+  }, "1 campa\xF1a, sin costo"))), React.createElement("div", {
     className: "ug-dash-main",
     style: {
       padding: 'clamp(18px,2.4vw,26px)'
@@ -3015,8 +3015,8 @@ function Pricing() {
   }, React.createElement(X3.Container, null, React.createElement(X3.Reveal, null, React.createElement(X3.SectionHead, {
     center: true,
     eyebrow: "Planes y precios",
-    title: "Paga por el software, no por intermediarios",
-    lead: "Un acceso mensual claro. El presupuesto de tus creadores va completo a ellos."
+    title: "Paga por el software que le da control y orden a tu criterio",
+    lead: "Un acceso mensual claro. Deja de perder horas en trabajo manual y enf\xF3cate en los resultados."
   })), React.createElement(X3.Reveal, {
     delay: 60
   }, React.createElement("div", {
@@ -3191,7 +3191,7 @@ function Pilot() {
       lineHeight: 1.1,
       color: '#fff'
     }
-  }, "Tu primera campa\xF1a con 1 creador es 100% gratis"), React.createElement("p", {
+  }, "Tu primera campa\xF1a es 100% gratis"), React.createElement("p", {
     style: {
       fontFamily: 'var(--font-ui)',
       fontSize: 15.5,
@@ -3200,7 +3200,7 @@ function Pilot() {
       marginTop: 14,
       maxWidth: '56ch'
     }
-  }, "Cero comisiones, cero costo de plataforma. Lanza tu primer video piloto y descubre c\xF3mo UGConnect te ayuda a escalar contenido aut\xE9ntico.")), React.createElement("div", {
+  }, "Cero costo de plataforma. Gestiona tu primera campa\xF1a totalmente gratis y descubre c\xF3mo UGConnect te ayuda a escalar las campa\xF1as de tus clientes.")), React.createElement("div", {
     style: {
       position: 'relative',
       flex: '0 0 auto'
@@ -3223,6 +3223,9 @@ function Testimonials() {
   const {
     testimonios
   } = window.UGDATA;
+  /* Oculto temporalmente hasta tener testimonios reales de la plataforma nueva.
+     Para reactivar: elimina el `return null;` siguiente. */
+  return null;
   return React.createElement("section", {
     style: {
       padding: 'clamp(72px,9vw,110px) 0',
