@@ -4881,6 +4881,7 @@ Object.assign(window, {
 /* app/main.jsx */
 (() => {
 const {
+  useState,
   useEffect: useFx
 } = React;
 const {
@@ -4938,6 +4939,7 @@ const CANVAS = {
 };
 function App() {
   const t = TWEAK_DEFAULTS;
+  const [showRest, setShowRest] = useState(false);
   useFx(() => {
     const r = document.documentElement.style;
     const a = ACCENTS[t.accent] || ACCENTS['#5D2978'];
@@ -4954,7 +4956,29 @@ function App() {
   useFx(() => {
     document.body.classList.toggle('no-reveal', !t.animations);
   }, [t.animations]);
-  return React.createElement(React.Fragment, null, React.createElement(Header, null), React.createElement("main", null, React.createElement(Hero, null), React.createElement(Logos, null), React.createElement(Problema, null), React.createElement(Solution, null), React.createElement(Gallery, null), React.createElement(HowItWorks, null), React.createElement(DashboardShowcase, null), React.createElement(Pricing, null), React.createElement(Pilot, null), React.createElement(Testimonials, null), React.createElement(Faq, null), React.createElement(FinalCTA, null), React.createElement(DemoForm, null)), React.createElement(Footer, null), React.createElement(FloatingWhatsApp, null));
+  useFx(() => {
+    let done = false;
+    const loadRest = () => {
+      if (done) return;
+      done = true;
+      setShowRest(true);
+    };
+    const id = window.setTimeout(loadRest, 1500);
+    window.addEventListener('scroll', loadRest, {
+      once: true,
+      passive: true
+    });
+    window.addEventListener('pointerdown', loadRest, {
+      once: true,
+      passive: true
+    });
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener('scroll', loadRest);
+      window.removeEventListener('pointerdown', loadRest);
+    };
+  }, []);
+  return React.createElement(React.Fragment, null, React.createElement(Header, null), React.createElement("main", null, React.createElement(Hero, null), showRest && React.createElement(React.Fragment, null, React.createElement(Logos, null), React.createElement(Problema, null), React.createElement(Solution, null), React.createElement(Gallery, null), React.createElement(HowItWorks, null), React.createElement(DashboardShowcase, null), React.createElement(Pricing, null), React.createElement(Pilot, null), React.createElement(Testimonials, null), React.createElement(Faq, null), React.createElement(FinalCTA, null), React.createElement(DemoForm, null))), showRest && React.createElement(Footer, null), React.createElement(FloatingWhatsApp, null));
 }
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App, null));
 })();
