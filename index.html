@@ -16,12 +16,15 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <title>UGConnect | Plataforma de gestión de campañas con creadores UGC</title>
 
+<link rel="preload" href="_ds/ugconnect/fonts/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="_ds/ugconnect/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="_ds/ugconnect/fonts/Poppins-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/imagery/ugc-creator-ringlight.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="_ds/ugconnect/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/ugconnect/tokens/colors.css">
 <link rel="stylesheet" href="_ds/ugconnect/tokens/typography.css">
 <link rel="stylesheet" href="_ds/ugconnect/tokens/spacing.css">
 <link rel="stylesheet" href="_ds/ugconnect/tokens/base.css">
-<link rel="stylesheet" href="_ds/ugconnect/styles.css">
 
 <style>
   html { scroll-behavior: smooth; }
@@ -70,6 +73,8 @@
   calnode-booking { display: block; width: 100%; min-height: 640px; }
   ::selection { background: var(--purple-200); color: var(--purple-900); }
 
+  main > section { content-visibility: auto; contain-intrinsic-size: 780px; }
+  main > section:first-child { content-visibility: visible; contain-intrinsic-size: auto; }
   * { -webkit-tap-highlight-color: rgba(93,41,120,.18); }
   section[id] { scroll-margin-top: 86px; }
   @media (max-width: 640px){ input, select, textarea { font-size: 16px !important; } }
@@ -84,11 +89,10 @@
 <body>
 <div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
-<script src="_ds/ugconnect/_ds_bundle.js"></script>
-<script src="assets/runtime-config.js"></script>
-<script src="https://calendar.ugconnect.pe/embed.js" async></script>
-<script src="assets/app.bundle.js"></script>
+<script defer src="assets/vendor/react.production.min.js"></script>
+<script defer src="assets/vendor/react-dom.production.min.js"></script>
+<script defer src="_ds/ugconnect/_ds_bundle.js"></script>
+<script defer src="assets/runtime-config.js"></script>
+<script defer src="assets/app.bundle.js"></script>
 </body>
 </html>

@@ -13,29 +13,29 @@ window.UGDATA = {
 
   /* ---- Marcas aliadas (logos reales subidos) ----------------------- */
   marcas: [
-    { nombre: "Bungu Socks",        logo: "assets/logos/Bungu%20Socks.jpg" },
-    { nombre: "Stanley Perú",       logo: "assets/logos/Stanley%20Peru.png" },
-    { nombre: "Muamore",            logo: "assets/logos/Muamore.png" },
-    { nombre: "La Fábrica",         logo: "assets/logos/La%20Fabrica.jpg" },
-    { nombre: "Om Bites",           logo: "assets/logos/Om%20Bites.jpg" },
-    { nombre: "Mi Dulce Jengibre",  logo: "assets/logos/Mi%20Dulce%20Jenjibre.jpg" },
-    { nombre: "Neosva",             logo: "assets/logos/Neosva.jpg" },
-    { nombre: "Pocket Bar",         logo: "assets/logos/Pocket%20Bar.jpg" },
-    { nombre: "Sual",               logo: "assets/logos/Sual.jpg" },
-    { nombre: "Calcetín",           logo: "assets/logos/Calcetin.jpg" },
+    { nombre: "Bungu Socks",        logo: "assets/logos/Bungu%20Socks.webp" },
+    { nombre: "Stanley Perú",       logo: "assets/logos/Stanley%20Peru.webp" },
+    { nombre: "Muamore",            logo: "assets/logos/Muamore.webp" },
+    { nombre: "La Fábrica",         logo: "assets/logos/La%20Fabrica.webp" },
+    { nombre: "Om Bites",           logo: "assets/logos/Om%20Bites.webp" },
+    { nombre: "Mi Dulce Jengibre",  logo: "assets/logos/Mi%20Dulce%20Jenjibre.webp" },
+    { nombre: "Neosva",             logo: "assets/logos/Neosva.webp" },
+    { nombre: "Pocket Bar",         logo: "assets/logos/Pocket%20Bar.webp" },
+    { nombre: "Sual",               logo: "assets/logos/Sual.webp" },
+    { nombre: "Calcetín",           logo: "assets/logos/Calcetin.webp" },
   ],
 
   /* ---- Creadores (mock — reemplazables) ---------------------------- */
   nichos: ["Todos", "Beauty", "Fitness", "Food", "Lifestyle", "Tech", "Fashion"],
   creadores: [
-    { nombre: "Lucía Marín",   handle: "@luciacreates",  nicho: "Beauty",    img: "assets/imagery/ugc-beauty-collagen.jpg",    ciudad: "Lima",     formato: "Reels · Unboxing", disponibilidad: "Disponible", rating: "4.9", verificado: true },
-    { nombre: "Diego Salas",   handle: "@diegofit",      nicho: "Fitness",   img: "assets/imagery/ugc-fitness-protein.jpg",    ciudad: "Arequipa", formato: "TikTok · Reseña",  disponibilidad: "Disponible", rating: "4.8", verificado: true },
-    { nombre: "Camila Ríos",   handle: "@camirios",      nicho: "Food",      img: "assets/imagery/ugc-collagen-kitchen.jpg",   ciudad: "Lima",     formato: "Recetas · Reels",  disponibilidad: "1 cupo",     rating: "5.0", verificado: false },
-    { nombre: "Sofía Quispe",  handle: "@sofiaq",        nicho: "Lifestyle", img: "assets/imagery/ugc-lifestyle-coffee.jpg",   ciudad: "Trujillo", formato: "Vlog · Stories",   disponibilidad: "Disponible", rating: "4.7", verificado: true },
-    { nombre: "Mateo Flores",  handle: "@mateoshoots",   nicho: "Tech",      img: "assets/imagery/ugc-bts-camera.jpg",         ciudad: "Lima",     formato: "Review · YouTube", disponibilidad: "Agenda llena", rating: "4.9", verificado: true },
-    { nombre: "Valeria Cano",  handle: "@valeskin",      nicho: "Beauty",    img: "assets/imagery/ugc-skincare-set.jpg",       ciudad: "Cusco",    formato: "GRWM · Tutorial",  disponibilidad: "Disponible", rating: "4.8", verificado: false },
-    { nombre: "Renzo Paredes", handle: "@renzomoves",    nicho: "Fashion",   img: "assets/imagery/ugc-supplement-portrait.jpg",ciudad: "Lima",     formato: "Lookbook · Reels", disponibilidad: "2 cupos",    rating: "4.6", verificado: true },
-    { nombre: "Ariana Tello",  handle: "@arifilms",      nicho: "Lifestyle", img: "assets/imagery/ugc-bts-tripod.jpg",         ciudad: "Piura",    formato: "BTS · UGC Ads",    disponibilidad: "Disponible", rating: "4.9", verificado: true },
+    { nombre: "Lucía Marín",   handle: "@luciacreates",  nicho: "Beauty",    img: "assets/imagery/ugc-beauty-collagen.webp",    ciudad: "Lima",     formato: "Reels · Unboxing", disponibilidad: "Disponible", rating: "4.9", verificado: true },
+    { nombre: "Diego Salas",   handle: "@diegofit",      nicho: "Fitness",   img: "assets/imagery/ugc-fitness-protein.webp",    ciudad: "Arequipa", formato: "TikTok · Reseña",  disponibilidad: "Disponible", rating: "4.8", verificado: true },
+    { nombre: "Camila Ríos",   handle: "@camirios",      nicho: "Food",      img: "assets/imagery/ugc-collagen-kitchen.webp",   ciudad: "Lima",     formato: "Recetas · Reels",  disponibilidad: "1 cupo",     rating: "5.0", verificado: false },
+    { nombre: "Sofía Quispe",  handle: "@sofiaq",        nicho: "Lifestyle", img: "assets/imagery/ugc-lifestyle-coffee.webp",   ciudad: "Trujillo", formato: "Vlog · Stories",   disponibilidad: "Disponible", rating: "4.7", verificado: true },
+    { nombre: "Mateo Flores",  handle: "@mateoshoots",   nicho: "Tech",      img: "assets/imagery/ugc-bts-camera.webp",         ciudad: "Lima",     formato: "Review · YouTube", disponibilidad: "Agenda llena", rating: "4.9", verificado: true },
+    { nombre: "Valeria Cano",  handle: "@valeskin",      nicho: "Beauty",    img: "assets/imagery/ugc-skincare-set.webp",       ciudad: "Cusco",    formato: "GRWM · Tutorial",  disponibilidad: "Disponible", rating: "4.8", verificado: false },
+    { nombre: "Renzo Paredes", handle: "@renzomoves",    nicho: "Fashion",   img: "assets/imagery/ugc-supplement-portrait.webp",ciudad: "Lima",     formato: "Lookbook · Reels", disponibilidad: "2 cupos",    rating: "4.6", verificado: true },
+    { nombre: "Ariana Tello",  handle: "@arifilms",      nicho: "Lifestyle", img: "assets/imagery/ugc-bts-tripod.webp",         ciudad: "Piura",    formato: "BTS · UGC Ads",    disponibilidad: "Disponible", rating: "4.9", verificado: true },
   ],
 
   /* ---- Planes — Marcas independientes ------------------------------ */
@@ -121,9 +121,9 @@ window.UGDATA = {
 
   /* ---- Testimonios (PLACEHOLDERS editables) ------------------------ */
   testimonios: [
-    { quote: "Lanzamos con 3 creadores y tuvimos los videos en redes en menos de una semana. Nos quitamos el dolor de cabeza de los recibos por honorarios.", nombre: "[ Nombre del cliente ]", cargo: "Gerente de Marketing", empresa: "[ Empresa ]", resultado: "3 videos en 6 días", nicho: "E-commerce", img: "assets/imagery/ugc-creator-ringlight.jpg" },
-    { quote: "Dejamos de coordinar por WhatsApp y Excel. Ahora todo el avance de cada creador está en un solo tablero y los pagos salen solos.", nombre: "[ Nombre del cliente ]", cargo: "Fundador", empresa: "[ Empresa ]", resultado: "0% comisión de agencia", nicho: "Startup", img: "assets/imagery/ugc-supplement-portrait.jpg" },
-    { quote: "Como agencia gestionamos varias marcas a la vez. El control por campaña y por cliente nos hizo más rápidos y ordenados.", nombre: "[ Nombre del cliente ]", cargo: "Directora de Cuentas", empresa: "[ Agencia ]", resultado: "5 marcas gestionadas", nicho: "Agencia", img: "assets/imagery/ugc-lifestyle-coffee.jpg" },
+    { quote: "Lanzamos con 3 creadores y tuvimos los videos en redes en menos de una semana. Nos quitamos el dolor de cabeza de los recibos por honorarios.", nombre: "[ Nombre del cliente ]", cargo: "Gerente de Marketing", empresa: "[ Empresa ]", resultado: "3 videos en 6 días", nicho: "E-commerce", img: "assets/imagery/ugc-creator-ringlight.webp" },
+    { quote: "Dejamos de coordinar por WhatsApp y Excel. Ahora todo el avance de cada creador está en un solo tablero y los pagos salen solos.", nombre: "[ Nombre del cliente ]", cargo: "Fundador", empresa: "[ Empresa ]", resultado: "0% comisión de agencia", nicho: "Startup", img: "assets/imagery/ugc-supplement-portrait.webp" },
+    { quote: "Como agencia gestionamos varias marcas a la vez. El control por campaña y por cliente nos hizo más rápidos y ordenados.", nombre: "[ Nombre del cliente ]", cargo: "Directora de Cuentas", empresa: "[ Agencia ]", resultado: "5 marcas gestionadas", nicho: "Agencia", img: "assets/imagery/ugc-lifestyle-coffee.webp" },
   ],
 
   /* ---- FAQ --------------------------------------------------------- */
@@ -357,10 +357,13 @@ function SectionHead({
 function Wordmark({
   size = 22
 }) {
-  /* Mismo logo que el panel web (ugconnect-logo-wordmark.png), tagline incluido. */
+  /* Mismo logo que el panel web, convertido a WebP para reducir peso. */
   return React.createElement("img", {
-    src: "assets/ugconnect-logo-wordmark.png",
+    src: "assets/ugconnect-logo-wordmark.webp",
     alt: "UGConnect — Connect. Colaborate. Create.",
+    width: 795,
+    height: 191,
+    decoding: "async",
     style: {
       height: Math.round(size * 1.5),
       width: 'auto',
@@ -891,8 +894,12 @@ function HeroMockup() {
       border: '3px solid var(--white)'
     }
   }, React.createElement("img", {
-    src: "assets/imagery/ugc-creator-ringlight.jpg",
+    src: "assets/imagery/ugc-creator-ringlight.webp",
     alt: "Creadora grabando contenido UGC",
+    width: 495,
+    height: 720,
+    decoding: "async",
+    fetchPriority: "high",
     style: {
       width: '100%',
       height: '100%',
@@ -1154,6 +1161,8 @@ function LogoChip({
   }, React.createElement("img", {
     src: m.logo,
     alt: m.nombre,
+    loading: "lazy",
+    decoding: "async",
     style: {
       maxWidth: '100%',
       maxHeight: '100%',
@@ -1540,6 +1549,8 @@ function CreatorCardPro({
   }, React.createElement("img", {
     src: c.img,
     alt: "",
+    loading: "lazy",
+    decoding: "async",
     style: {
       width: '100%',
       height: '100%',
@@ -1899,6 +1910,8 @@ function GalleryTile({
   }, React.createElement("img", {
     src: it.src,
     alt: `Contenido UGC · ${it.tag}`,
+    loading: "lazy",
+    decoding: "async",
     style: {
       width: '100%',
       height: '100%',
@@ -1961,39 +1974,39 @@ function GalleryTile({
 }
 function Gallery() {
   const imgs = [{
-    src: 'assets/imagery/ugc-creator-ringlight.jpg',
+    src: 'assets/imagery/ugc-creator-ringlight.webp',
     tag: 'Beauty',
     dur: '0:28'
   }, {
-    src: 'assets/imagery/ugc-fitness-protein.jpg',
+    src: 'assets/imagery/ugc-fitness-protein.webp',
     tag: 'Fitness',
     dur: '0:35'
   }, {
-    src: 'assets/imagery/ugc-lifestyle-coffee.jpg',
+    src: 'assets/imagery/ugc-lifestyle-coffee.webp',
     tag: 'Lifestyle',
     dur: '0:22'
   }, {
-    src: 'assets/imagery/ugc-beauty-collagen.jpg',
+    src: 'assets/imagery/ugc-beauty-collagen.webp',
     tag: 'Skincare',
     dur: '0:41'
   }, {
-    src: 'assets/imagery/ugc-bts-camera.jpg',
+    src: 'assets/imagery/ugc-bts-camera.webp',
     tag: 'Detrás de cámaras',
     dur: '0:18'
   }, {
-    src: 'assets/imagery/ugc-collagen-kitchen.jpg',
+    src: 'assets/imagery/ugc-collagen-kitchen.webp',
     tag: 'Food',
     dur: '0:30'
   }, {
-    src: 'assets/imagery/ugc-supplement-portrait.jpg',
+    src: 'assets/imagery/ugc-supplement-portrait.webp',
     tag: 'Wellness',
     dur: '0:26'
   }, {
-    src: 'assets/imagery/ugc-skincare-set.jpg',
+    src: 'assets/imagery/ugc-skincare-set.webp',
     tag: 'Unboxing',
     dur: '0:33'
   }, {
-    src: 'assets/imagery/ugc-bts-tripod.jpg',
+    src: 'assets/imagery/ugc-bts-tripod.webp',
     tag: 'UGC Ads',
     dur: '0:24'
   }];
@@ -2177,12 +2190,12 @@ function DashboardShowcase() {
       n: "Lucía Marín",
       g: "Beauty",
       s: "Enviado",
-      img: "assets/imagery/ugc-beauty-collagen.jpg"
+      img: "assets/imagery/ugc-beauty-collagen.webp"
     }, {
       n: "Diego Salas",
       g: "Fitness",
       s: "Enviado",
-      img: "assets/imagery/ugc-fitness-protein.jpg"
+      img: "assets/imagery/ugc-fitness-protein.webp"
     }]
   }, {
     t: "Creador aceptado",
@@ -2191,7 +2204,7 @@ function DashboardShowcase() {
       n: "Camila Ríos",
       g: "Food",
       s: "Aceptado",
-      img: "assets/imagery/ugc-collagen-kitchen.jpg"
+      img: "assets/imagery/ugc-collagen-kitchen.webp"
     }]
   }, {
     t: "En producción",
@@ -2200,12 +2213,12 @@ function DashboardShowcase() {
       n: "Sofía Quispe",
       g: "Lifestyle",
       s: "Grabando",
-      img: "assets/imagery/ugc-lifestyle-coffee.jpg"
+      img: "assets/imagery/ugc-lifestyle-coffee.webp"
     }, {
       n: "Renzo Paredes",
       g: "Fashion",
       s: "Grabando",
-      img: "assets/imagery/ugc-supplement-portrait.jpg"
+      img: "assets/imagery/ugc-supplement-portrait.webp"
     }]
   }, {
     t: "En revisión",
@@ -2214,7 +2227,7 @@ function DashboardShowcase() {
       n: "Ariana Tello",
       g: "UGC Ads",
       s: "Por aprobar",
-      img: "assets/imagery/ugc-bts-tripod.jpg"
+      img: "assets/imagery/ugc-bts-tripod.webp"
     }]
   }, {
     t: "Aprobado",
@@ -2223,7 +2236,7 @@ function DashboardShowcase() {
       n: "Valeria Cano",
       g: "Beauty",
       s: "Aprobado",
-      img: "assets/imagery/ugc-skincare-set.jpg"
+      img: "assets/imagery/ugc-skincare-set.webp"
     }]
   }];
   const sideItems = [{
@@ -3538,6 +3551,7 @@ function DemoForm() {
   const calnodeSlug = (window.UGDATA.calnodeSlug || "demo-1-on-1").trim();
   const calnodeBookingUrl = calnodeUrl && calnodeSlug ? `${calnodeUrl}/book/${encodeURIComponent(calnodeSlug)}` : "";
   const hasCalnode = Boolean(calnodeUrl && calnodeSlug);
+  const demoRef = useRef(null);
   const dates = useRef(nextDates(5)).current;
   const [step, setStep] = useState(1);
   const [date, setDate] = useState(dates[0]);
@@ -3554,8 +3568,35 @@ function DemoForm() {
     ...s,
     [k]: e.target.value
   }));
+  useEffect(() => {
+    if (!hasCalnode) return;
+    const loadCalendar = () => {
+      if (document.querySelector('script[data-ug-calnode]')) return;
+      const s = document.createElement('script');
+      s.src = `${calnodeUrl}/embed.js`;
+      s.async = true;
+      s.dataset.ugCalnode = 'true';
+      document.head.appendChild(s);
+    };
+    const el = demoRef.current;
+    if (!el || !('IntersectionObserver' in window)) {
+      loadCalendar();
+      return;
+    }
+    const io = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        loadCalendar();
+        io.disconnect();
+      }
+    }, {
+      rootMargin: '600px 0px'
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasCalnode, calnodeUrl]);
   return React.createElement("section", {
     id: "demo",
+    ref: demoRef,
     style: {
       padding: 'clamp(72px,9vw,110px) 0',
       background: 'var(--white)'
@@ -4865,7 +4906,8 @@ const {
   Faq,
   FinalCTA,
   DemoForm,
-  Footer
+  Footer,
+  FloatingWhatsApp
 } = window;
 const TWEAK_DEFAULTS = {
   "accent": "#5D2978",
@@ -4895,7 +4937,7 @@ const CANVAS = {
   'Gris cálido': '#F3F1F6'
 };
 function App() {
-  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const t = TWEAK_DEFAULTS;
   useFx(() => {
     const r = document.documentElement.style;
     const a = ACCENTS[t.accent] || ACCENTS['#5D2978'];
@@ -4912,29 +4954,7 @@ function App() {
   useFx(() => {
     document.body.classList.toggle('no-reveal', !t.animations);
   }, [t.animations]);
-  return React.createElement(React.Fragment, null, React.createElement(Header, null), React.createElement("main", null, React.createElement(Hero, null), React.createElement(Logos, null), React.createElement(Problema, null), React.createElement(Solution, null), React.createElement(Gallery, null), React.createElement(HowItWorks, null), React.createElement(DashboardShowcase, null), React.createElement(Pricing, null), React.createElement(Pilot, null), React.createElement(Testimonials, null), React.createElement(Faq, null), React.createElement(FinalCTA, null), React.createElement(DemoForm, null)), React.createElement(Footer, null), React.createElement(FloatingWhatsApp, null), React.createElement(TweaksPanel, {
-    title: "Tweaks"
-  }, React.createElement(TweakSection, {
-    label: "Marca"
-  }), React.createElement(TweakColor, {
-    label: "Acento",
-    value: t.accent,
-    options: ['#5D2978', '#4A1F62', '#8852A2', '#39164C'],
-    onChange: v => setTweak('accent', v)
-  }), React.createElement(TweakSection, {
-    label: "Lienzo"
-  }), React.createElement(TweakRadio, {
-    label: "Fondo de secciones",
-    value: t.canvas,
-    options: ['Lavanda', 'Gris cálido'],
-    onChange: v => setTweak('canvas', v)
-  }), React.createElement(TweakSection, {
-    label: "Movimiento"
-  }), React.createElement(TweakToggle, {
-    label: "Animaciones al hacer scroll",
-    value: t.animations,
-    onChange: v => setTweak('animations', v)
-  })));
+  return React.createElement(React.Fragment, null, React.createElement(Header, null), React.createElement("main", null, React.createElement(Hero, null), React.createElement(Logos, null), React.createElement(Problema, null), React.createElement(Solution, null), React.createElement(Gallery, null), React.createElement(HowItWorks, null), React.createElement(DashboardShowcase, null), React.createElement(Pricing, null), React.createElement(Pilot, null), React.createElement(Testimonials, null), React.createElement(Faq, null), React.createElement(FinalCTA, null), React.createElement(DemoForm, null)), React.createElement(Footer, null), React.createElement(FloatingWhatsApp, null));
 }
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App, null));
 })();
