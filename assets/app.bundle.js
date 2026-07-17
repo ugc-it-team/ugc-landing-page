@@ -7,6 +7,8 @@ const UGCONFIG = window.UGCONFIG || {};
 window.UGDATA = {
   /* ---- Configuración de integraciones ------------------------------ */
   calcomUrl: UGCONFIG.calcomUrl || "",
+  calnodeUrl: UGCONFIG.calnodeUrl || "",
+  calnodeSlug: UGCONFIG.calnodeSlug || "demo-1-on-1",
   platformUrl: UGCONFIG.platformUrl || "",
 
   /* ---- Marcas aliadas (logos reales subidos) ----------------------- */
@@ -1040,8 +1042,8 @@ function Hero() {
     style: {
       fontFamily: 'var(--font-display)',
       fontWeight: 700,
-      fontSize: 'clamp(36px, 5.4vw, 64px)',
-      lineHeight: 1.04,
+      fontSize: 'clamp(28px, 4vw, 52px)',
+      lineHeight: 1.12,
       letterSpacing: 'var(--tracking-tighter)',
       color: 'var(--text-strong)',
       margin: 0
@@ -1107,9 +1109,14 @@ function Hero() {
       transitionDelay: '120ms'
     }
   }, React.createElement(HeroMockup, null)))), React.createElement("style", null, `
+        .ug-hero-grid > *{ min-width: 0; }
         @media (max-width: 860px){
           .ug-hero-grid{ grid-template-columns: 1fr !important; }
-          .ug-hero-mockup{ margin-top: 12px; max-width: 460px; }
+          .ug-hero-mockup{ margin-top: 12px; width: 100%; max-width: 460px; overflow: hidden; }
+        }
+        @media (max-width: 560px){
+          .ug-hero-grid{ overflow: hidden; }
+          .ug-hero-mockup{ max-width: 100%; }
         }
         @media (max-width: 420px){ .ug-hero-thumb{ display: none; } }
       `));
@@ -3520,6 +3527,10 @@ function nextDates(count) {
 const TIMES = ['10:00 AM', '11:30 AM', '02:00 PM', '04:00 PM', '05:30 PM'];
 function DemoForm() {
   const calcomUrl = (window.UGDATA.calcomUrl || "").trim();
+  const calnodeUrl = (window.UGDATA.calnodeUrl || "").trim().replace(/\/$/, "");
+  const calnodeSlug = (window.UGDATA.calnodeSlug || "demo-1-on-1").trim();
+  const calnodeBookingUrl = calnodeUrl && calnodeSlug ? `${calnodeUrl}/book/${encodeURIComponent(calnodeSlug)}` : "";
+  const hasCalnode = Boolean(calnodeUrl && calnodeSlug);
   const dates = useRef(nextDates(5)).current;
   const [step, setStep] = useState(1);
   const [date, setDate] = useState(dates[0]);
@@ -3655,7 +3666,7 @@ function DemoForm() {
       padding: 'clamp(24px,3vw,34px)',
       border: '1px solid var(--border-faint)'
     }
-  }, calcomUrl && React.createElement("div", {
+  }, hasCalnode && React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -3675,7 +3686,53 @@ function DemoForm() {
       color: 'var(--text-muted)',
       marginTop: 4
     }
-  }, "Calendario conectado con Cal.com.")), React.createElement("iframe", {
+  }, "Selecciona un espacio para tu demo 1-on-1.")), React.createElement("div", {
+    style: {
+      width: '100%',
+      minHeight: 640,
+      border: '1px solid var(--border-faint)',
+      borderRadius: 'var(--radius-lg)',
+      overflow: 'hidden',
+      background: 'var(--white)'
+    }
+  }, React.createElement("calnode-booking", {
+    slug: calnodeSlug
+  })), React.createElement("a", {
+    href: calnodeBookingUrl,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    style: {
+      textDecoration: 'none'
+    }
+  }, React.createElement(B3, {
+    variant: "outline",
+    size: "md",
+    fullWidth: true,
+    iconRight: React.createElement(X3.Icon, {
+      name: "arrow-up-right",
+      size: 17
+    })
+  }, "Abrir agenda en otra pestaña"))), !hasCalnode && calcomUrl && React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 14
+    }
+  }, React.createElement("div", null, React.createElement("h3", {
+    style: {
+      fontFamily: 'var(--font-display)',
+      fontWeight: 700,
+      fontSize: 19,
+      color: 'var(--text-strong)'
+    }
+  }, "Elige un horario disponible"), React.createElement("p", {
+    style: {
+      fontFamily: 'var(--font-ui)',
+      fontSize: 13,
+      color: 'var(--text-muted)',
+      marginTop: 4
+    }
+  }, "Calendario conectado.")), React.createElement("iframe", {
     title: "Agenda tu demo UGConnect",
     src: calcomUrl,
     loading: "lazy",
@@ -3701,7 +3758,7 @@ function DemoForm() {
       name: "arrow-up-right",
       size: 17
     })
-  }, "Abrir agenda en Cal.com"))), !calcomUrl && step === 1 && React.createElement("div", {
+  }, "Abrir agenda en otra pestaña"))), !hasCalnode && !calcomUrl && step === 1 && React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -3796,7 +3853,7 @@ function DemoForm() {
       name: "arrow-right",
       size: 18
     })
-  }, "Continuar")), !calcomUrl && step === 2 && React.createElement("div", {
+  }, "Continuar")), !hasCalnode && !calcomUrl && step === 2 && React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
@@ -3903,7 +3960,7 @@ function DemoForm() {
       name: "check",
       size: 18
     })
-  }, "Agendar demo")), !calcomUrl && step === 3 && React.createElement("div", {
+  }, "Agendar demo")), !hasCalnode && !calcomUrl && step === 3 && React.createElement("div", {
     style: {
       textAlign: 'center',
       padding: '20px 8px',

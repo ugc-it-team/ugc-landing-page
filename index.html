@@ -4,8 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#5D2978">
-<meta name="description" content="UGConnect conecta marcas con creadores UGC para lanzar campañas auténticas, gestionar entregables y centralizar pagos sin agencias.">
-<title>UGConnect | Contenido auténtico para tu marca</title>
+<meta name="description" content="UGConnect ayuda a Agencias de Marketing Digital y marcas a centralizar la gestión de campañas con creadores UGC desde la búsqueda de perfiles hasta la gestión de avances, pagos y performance de los contenidos">
+<meta property="og:title" content="UGConnect | Plataforma de gestión de campañas con creadores UGC">
+<meta property="og:description" content="UGConnect ayuda a Agencias de Marketing Digital y marcas a centralizar la gestión de campañas con creadores UGC desde la búsqueda de perfiles hasta la gestión de avances, pagos y performance de los contenidos">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ugconnect.pe/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UGConnect | Plataforma de gestión de campañas con creadores UGC">
+<meta name="twitter:description" content="UGConnect ayuda a Agencias de Marketing Digital y marcas a centralizar la gestión de campañas con creadores UGC desde la búsqueda de perfiles hasta la gestión de avances, pagos y performance de los contenidos">
+<link rel="canonical" href="https://ugconnect.pe/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<title>UGConnect | Plataforma de gestión de campañas con creadores UGC</title>
 
 <link rel="stylesheet" href="_ds/ugconnect/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/ugconnect/tokens/colors.css">
@@ -58,11 +67,13 @@
   .ug-link { font-family: var(--font-ui); font-weight: 500; font-size: 14.5px; color: var(--text-body); text-decoration: none; transition: color .15s var(--ease-out); }
   .ug-link:hover { color: var(--brand-primary); text-decoration: none; }
   .ug-faq-body { overflow: hidden; transition: height .32s var(--ease-out); }
+  calnode-booking { display: block; width: 100%; min-height: 640px; }
   ::selection { background: var(--purple-200); color: var(--purple-900); }
 
   * { -webkit-tap-highlight-color: rgba(93,41,120,.18); }
   section[id] { scroll-margin-top: 86px; }
   @media (max-width: 640px){ input, select, textarea { font-size: 16px !important; } }
+  @media (max-width: 640px){ calnode-booking { min-height: 720px; } }
   @media (max-width: 560px){
     .ug-cta-row { flex-direction: column !important; align-items: stretch !important; }
     .ug-cta-row > a { width: 100%; }
@@ -77,6 +88,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
 <script src="_ds/ugconnect/_ds_bundle.js"></script>
 <script src="assets/runtime-config.js"></script>
+<script src="https://calendar.ugconnect.pe/embed.js" async></script>
 <script src="assets/app.bundle.js"></script>
 </body>
 </html>
