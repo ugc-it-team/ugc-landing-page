@@ -204,6 +204,12 @@ const UG_ICONS = {
   mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/>',
   phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>'
 };
+const UG_CONTACT = {
+  instagram: 'https://www.instagram.com/ugconnect.pe/',
+  tiktok: 'https://www.tiktok.com/@ugconnect.pe',
+  whatsapp: 'https://api.whatsapp.com/send/?phone=51989381647&text=Hola%2C+soy+una+marca+y+me+gustaria+activar+mi+primera+campa%C3%B1a+gratis+en+UGConnect&type=phone_number&app_absent=0',
+  email: 'mailto:ugconnectplatform@gmail.com'
+};
 function Icon({
   name,
   size = 20,
@@ -408,6 +414,7 @@ window.UGX = {
   Wordmark,
   useCountUp
 };
+window.UG_CONTACT = UG_CONTACT;
 })();
 
 
@@ -4029,6 +4036,51 @@ function DemoForm() {
         @media (max-width: 480px){ .ug-date-grid{ grid-template-columns: repeat(2,1fr) !important; } }
       `));
 }
+function TikTokMark({
+  size = 17
+}) {
+  return React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    "aria-hidden": "true"
+  }, React.createElement("path", {
+    d: "M14 3v10.4a4.6 4.6 0 1 1-4.6-4.6"
+  }), React.createElement("path", {
+    d: "M14 5.8c1.4 2 3.1 3.1 5.2 3.2"
+  }));
+}
+function FooterSocialIcon({
+  item
+}) {
+  return React.createElement("a", {
+    href: item.href,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": item.label,
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: 10,
+      background: 'rgba(255,255,255,.1)',
+      color: '#fff',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textDecoration: 'none'
+    }
+  }, item.icon === 'tiktok' ? React.createElement(TikTokMark, {
+    size: 17
+  }) : React.createElement(X3.Icon, {
+    name: item.icon,
+    size: 17
+  }));
+}
 function Footer() {
   const cols = [{
     h: 'Producto',
@@ -4066,6 +4118,23 @@ function Footer() {
       label: 'Política de privacidad',
       href: 'legal/privacy-policy/'
     }]
+  }];
+  const socials = [{
+    label: 'Instagram',
+    href: window.UG_CONTACT.instagram,
+    icon: 'instagram'
+  }, {
+    label: 'TikTok',
+    href: window.UG_CONTACT.tiktok,
+    icon: 'tiktok'
+  }, {
+    label: 'WhatsApp',
+    href: window.UG_CONTACT.whatsapp,
+    icon: 'message-circle'
+  }, {
+    label: 'Correo',
+    href: window.UG_CONTACT.email,
+    icon: 'mail'
   }];
   return React.createElement("footer", {
     style: {
@@ -4160,23 +4229,38 @@ function Footer() {
       display: 'flex',
       gap: 8
     }
-  }, ['instagram', 'message-circle', 'mail'].map(ic => React.createElement("span", {
-    key: ic,
+  }, socials.map(item => React.createElement(FooterSocialIcon, {
+    key: item.label,
+    item: item
+  }))))), React.createElement("style", null, `@media (max-width: 760px){ .ug-foot{ grid-template-columns: 1fr 1fr !important; } }`));
+}
+function FloatingWhatsApp() {
+  return React.createElement("a", {
+    href: window.UG_CONTACT.whatsapp,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "Escribir por WhatsApp",
     style: {
-      width: 36,
-      height: 36,
-      borderRadius: 10,
-      background: 'rgba(255,255,255,.1)',
+      position: 'fixed',
+      right: 'clamp(16px, 3vw, 28px)',
+      bottom: 'calc(18px + env(safe-area-inset-bottom))',
+      zIndex: 80,
+      width: 58,
+      height: 58,
+      borderRadius: '50%',
+      background: '#25D366',
       color: '#fff',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
-      cursor: 'pointer'
+      boxShadow: '0 16px 34px rgba(37,211,102,.34), 0 8px 18px rgba(41,38,27,.18)',
+      textDecoration: 'none'
     }
   }, React.createElement(X3.Icon, {
-    name: ic,
-    size: 17
-  })))))), React.createElement("style", null, `@media (max-width: 760px){ .ug-foot{ grid-template-columns: 1fr 1fr !important; } }`));
+    name: "message-circle",
+    size: 28,
+    strokeWidth: 2.3
+  }));
 }
 Object.assign(window, {
   Calculator,
@@ -4186,7 +4270,8 @@ Object.assign(window, {
   Faq,
   FinalCTA,
   DemoForm,
-  Footer
+  Footer,
+  FloatingWhatsApp
 });
 })();
 
@@ -4827,7 +4912,7 @@ function App() {
   useFx(() => {
     document.body.classList.toggle('no-reveal', !t.animations);
   }, [t.animations]);
-  return React.createElement(React.Fragment, null, React.createElement(Header, null), React.createElement("main", null, React.createElement(Hero, null), React.createElement(Logos, null), React.createElement(Problema, null), React.createElement(Solution, null), React.createElement(Gallery, null), React.createElement(HowItWorks, null), React.createElement(DashboardShowcase, null), React.createElement(Pricing, null), React.createElement(Pilot, null), React.createElement(Testimonials, null), React.createElement(Faq, null), React.createElement(FinalCTA, null), React.createElement(DemoForm, null)), React.createElement(Footer, null), React.createElement(TweaksPanel, {
+  return React.createElement(React.Fragment, null, React.createElement(Header, null), React.createElement("main", null, React.createElement(Hero, null), React.createElement(Logos, null), React.createElement(Problema, null), React.createElement(Solution, null), React.createElement(Gallery, null), React.createElement(HowItWorks, null), React.createElement(DashboardShowcase, null), React.createElement(Pricing, null), React.createElement(Pilot, null), React.createElement(Testimonials, null), React.createElement(Faq, null), React.createElement(FinalCTA, null), React.createElement(DemoForm, null)), React.createElement(Footer, null), React.createElement(FloatingWhatsApp, null), React.createElement(TweaksPanel, {
     title: "Tweaks"
   }, React.createElement(TweakSection, {
     label: "Marca"
