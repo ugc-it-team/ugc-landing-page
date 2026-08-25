@@ -22,3 +22,14 @@ window.UGCONFIG = {
 ```
 
 Si los valores están vacíos, la landing usa fallbacks internos.
+
+## Logos de marcas
+
+El carrusel de logos se configura en `assets/runtime-config.js`, dentro de
+`window.UGCONFIG.marcas`.
+
+Para cambiar una marca:
+
+1. Agrega el logo optimizado en `assets/logos/small/` como WebP de 120x120.
+2. Actualiza el objeto `{ nombre, logo }` correspondiente.
+3. Conserva las rutas con espacios codificados como `%20`.
