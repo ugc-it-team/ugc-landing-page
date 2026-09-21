@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { ContactButton } from "@/components/ui/ContactButton";
@@ -114,7 +114,7 @@ export function Navbar() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             id="menu-movil"
             className="relative border-t border-ink/5 bg-white lg:hidden"
             initial={{ opacity: 0, y: -10 }}
@@ -149,7 +149,7 @@ export function Navbar() {
                 </Button>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </header>

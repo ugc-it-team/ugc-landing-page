@@ -1,7 +1,7 @@
 "use client";
 
 import { useId } from "react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { howItWorks } from "@/content/es";
 import { MockLabel, MockWindow } from "@/components/mockups/MockWindow";
 
@@ -18,14 +18,14 @@ const sparks = [
 const bars = ["w-[88%]", "w-[64%]", "w-[46%]"];
 
 export function DashboardMock() {
-  const m = howItWorks.mocks.dashboard;
+  const mock = howItWorks.mocks.dashboard;
   // id único: esta maqueta se dibuja también en la lista móvil (evita ids duplicados)
   const gradId = useId();
   return (
-    <MockWindow title={m.title} badge={m.badge}>
+    <MockWindow title={mock.title} badge={mock.badge}>
       <div className="flex h-full flex-col gap-3 p-4 sm:p-5">
         <div className="grid grid-cols-3 gap-2.5">
-          {m.stats.map((s, i) => (
+          {mock.stats.map((s, i) => (
             <div key={s} className="rounded-xl border border-brand-100 bg-white p-2.5">
               <p className="truncate text-[11px] font-semibold text-muted">{s}</p>
               <svg viewBox="0 0 70 28" className="mt-2 h-6 w-full" fill="none" aria-hidden>
@@ -53,7 +53,7 @@ export function DashboardMock() {
             {[30, 70, 110].map((y) => (
               <line key={y} x1="0" x2="400" y1={y} y2={y} stroke="#f2eaf6" strokeWidth="1" vectorEffect="non-scaling-stroke" />
             ))}
-            <motion.path
+            <m.path
               d={`${LINE} L400 150 L0 150 Z`}
               fill={`url(#${gradId})`}
               initial={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export function DashboardMock() {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
             />
-            <motion.path
+            <m.path
               d={LINE}
               stroke="#8852a2"
               strokeWidth="3"
@@ -75,15 +75,15 @@ export function DashboardMock() {
             />
           </svg>
           <div className="mt-1 flex justify-between px-1 text-[10px] font-medium text-muted">
-            {m.weeks.map((w) => (
+            {mock.weeks.map((w) => (
               <span key={w}>{w}</span>
             ))}
           </div>
         </div>
 
         <div className="space-y-2 rounded-xl border border-brand-100 bg-white p-3">
-          <MockLabel>{m.listTitle}</MockLabel>
-          {m.list.map((row, i) => (
+          <MockLabel>{mock.listTitle}</MockLabel>
+          {mock.list.map((row, i) => (
             <div key={row} className="flex items-center gap-3">
               <span className="w-28 shrink-0 truncate text-[11px] font-medium text-ink sm:w-32">{row}</span>
               <span className="h-1.5 flex-1 rounded-full bg-brand-100">

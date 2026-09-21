@@ -29,7 +29,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  // El morado primario, igual que en el sitio anterior: tiñe la barra del navegador móvil.
+  themeColor: "#5d2978",
   width: "device-width",
   initialScale: 1,
 };

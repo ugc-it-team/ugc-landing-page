@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -14,7 +14,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
  * Para quién es — pestañas interactivas (Marcas / Agencias). Las marcas van primero y son la pestaña activa por defecto.
- * Al cambiar de pestaña: el indicador se desliza (layoutId) y el contenido sale/entra con fundido.
+ * Al cambiar de pestaña: el indicador se desliza y el contenido sale/entra con fundido.
  */
 export function Audience() {
   const [active, setActive] = useState(0);
@@ -40,14 +40,13 @@ export function Audience() {
             label={audience.tablistLabel}
             idPrefix="audience"
             panelId="audience-panel"
-            layoutId="audience-pill"
           />
         </Reveal>
 
         <Reveal delay={0.28}>
           <div className="mt-10 rounded-[2rem] border border-brand-100 bg-brand-50/60 p-5 sm:p-10">
             <AnimatePresence mode="wait" initial={false}>
-              <motion.div
+              <m.div
                 key={tab.id}
                 id="audience-panel"
                 role="tabpanel"
@@ -70,7 +69,7 @@ export function Audience() {
                   <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">{tab.text}</p>
                   <ul className="mt-7 space-y-3.5">
                     {tab.benefits.map((b, i) => (
-                      <motion.li
+                      <m.li
                         key={b}
                         className="flex items-start gap-3 text-[0.97rem] leading-snug text-ink"
                         initial={{ opacity: 0, y: 10 }}
@@ -81,7 +80,7 @@ export function Audience() {
                           <IconCheck className="size-3.5" />
                         </span>
                         {b}
-                      </motion.li>
+                      </m.li>
                     ))}
                   </ul>
                   <div className="mt-8">
@@ -102,7 +101,7 @@ export function Audience() {
                       className="absolute bottom-3 left-[1.05rem] top-3 w-px bg-gradient-to-b from-brand-300 to-brand-100"
                     />
                     {tab.flow.map((step, i) => (
-                      <motion.li
+                      <m.li
                         key={step}
                         className="relative flex items-start gap-4"
                         initial={{ opacity: 0, x: 14 }}
@@ -116,11 +115,11 @@ export function Audience() {
                           {i + 1}
                         </span>
                         <span className="pt-1 text-[0.97rem] font-medium leading-snug text-ink">{step}</span>
-                      </motion.li>
+                      </m.li>
                     ))}
                   </ol>
                 </div>
-              </motion.div>
+              </m.div>
             </AnimatePresence>
           </div>
         </Reveal>

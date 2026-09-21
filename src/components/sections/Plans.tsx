@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { Container } from "@/components/ui/Container";
@@ -142,13 +142,12 @@ export function Plans() {
             label={plans.tablistLabel}
             idPrefix="plans"
             panelId="plans-panel"
-            layoutId="plans-pill"
           />
         </Reveal>
 
         <Reveal delay={0.28}>
           <AnimatePresence mode="wait" initial={false}>
-            <motion.div
+            <m.div
               key={tab.id}
               id="plans-panel"
               role="tabpanel"
@@ -164,7 +163,7 @@ export function Plans() {
                 {tab.plans.map((plan, i) => {
                   const recommended = plan.id === RECOMMENDED_PLAN_ID;
                   return (
-                    <motion.li
+                    <m.li
                       key={plan.id}
                       className="relative isolate flex"
                       initial={{ opacity: 0, y: 22 }}
@@ -182,11 +181,11 @@ export function Plans() {
                         />
                       )}
                       <PlanCard plan={plan} audience={tab.id === "agencias" ? "agencia" : "marca"} />
-                    </motion.li>
+                    </m.li>
                   );
                 })}
               </ul>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </Reveal>
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
-  motion,
+  m,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
@@ -105,7 +105,7 @@ export function HowItWorks() {
               <ol className="relative space-y-2 pl-16" aria-label={howItWorks.title}>
                 {/* Riel: se llena con el avance del scroll (solo transform) */}
                 <span aria-hidden className="absolute bottom-6 left-[1.4rem] top-6 w-0.5 rounded-full bg-brand-200" />
-                <motion.span
+                <m.span
                   aria-hidden
                   style={{ scaleY: scrollYProgress }}
                   className="absolute bottom-6 left-[1.4rem] top-6 w-0.5 origin-top rounded-full bg-brand-600"
@@ -185,7 +185,7 @@ export function HowItWorks() {
                 )}
               >
                 <AnimatePresence mode="wait">
-                  <motion.div
+                  <m.div
                     key={active}
                     className="h-full"
                     initial={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -202,7 +202,7 @@ export function HowItWorks() {
                     ) : (
                       <ActiveMock />
                     )}
-                  </motion.div>
+                  </m.div>
                 </AnimatePresence>
                 <p className="absolute -bottom-7 right-2 text-[11px] font-medium text-muted">
                   {activeVideo ? howItWorks.videoNote : howItWorks.illustrative}

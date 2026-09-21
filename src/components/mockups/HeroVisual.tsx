@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import {
-  motion,
+  m,
   useReducedMotion,
   useScroll,
   useTransform,
@@ -55,8 +55,8 @@ function Float({
   children: React.ReactNode;
 }) {
   return (
-    <motion.div className={cn("absolute z-10", className)} style={y ? { y } : undefined}>
-      <motion.div
+    <m.div className={cn("absolute z-10", className)} style={y ? { y } : undefined}>
+      <m.div
         initial={{ opacity: 0, y: 24, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, delay, ease: EASE }}
@@ -64,8 +64,8 @@ function Float({
         <div className="float-y animate-float" style={{ animationDelay: floatDelay }}>
           {children}
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
 
@@ -90,8 +90,8 @@ export function HeroVisual() {
       className="relative mx-auto mt-14 w-full max-w-5xl px-4 sm:mt-16 sm:px-6"
     >
       {/* Ventana principal */}
-      <motion.div style={reduce ? undefined : { y: yWindow }}>
-        <motion.div
+      <m.div style={reduce ? undefined : { y: yWindow }}>
+        <m.div
           initial={{ opacity: 0, y: 48, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
@@ -177,8 +177,8 @@ export function HeroVisual() {
               </div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Flotante: brief enviado */}
       <Float

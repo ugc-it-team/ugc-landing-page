@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { m, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { cn } from "@/lib/cn";
 
 type DarkSheetProps = {
@@ -22,7 +22,7 @@ export function DarkSheet({ rounded = "all" }: DarkSheetProps) {
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       aria-hidden
       style={{ opacity: reduce ? 1 : opacity }}

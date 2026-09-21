@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { IconCheck } from "@/components/ui/icons";
 import { finalCta } from "@/content/es";
@@ -100,14 +100,14 @@ export function LeadForm() {
     return (
       <div className={shell} role="status">
         <div className="flex flex-col items-center py-8 text-center">
-          <motion.span
+          <m.span
             initial={{ scale: 0.4, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
             className="flex size-16 items-center justify-center rounded-full bg-brand-600 text-white shadow-[0_14px_30px_-10px_rgba(93,41,120,0.9)]"
           >
             <IconCheck className="size-8" />
-          </motion.span>
+          </m.span>
           <h3
             ref={successRef}
             tabIndex={-1}

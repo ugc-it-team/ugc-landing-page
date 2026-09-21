@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import {
   animate,
-  motion,
+  m,
   useInView,
   useMotionValue,
   useReducedMotion,
@@ -44,9 +44,9 @@ export function CountUp({ to, prefix = "", duration = 1.6, className }: CountUpP
         {prefix}
         {to}
       </span>
-      <motion.span ref={ref} aria-hidden className="tabular-nums">
+      <m.span ref={ref} aria-hidden className="tabular-nums">
         {text}
-      </motion.span>
+      </m.span>
     </span>
   );
 }
