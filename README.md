@@ -65,17 +65,26 @@ Pendiente de completar. Hace falta:
 
 ## Despliegue
 
+Railway, construyendo desde el `Dockerfile` (`railway.json` fija el builder; los otros proyectos
+del stack usan Nixpacks, este no, porque la imagen lleva nginx además de Node).
+
 Imagen Docker con nginx al frente y Next en modo `standalone` detrás. nginx escucha en `${PORT}`
-(lo inyecta el proveedor) y sirve `/_next/static` y `/assets` desde disco con caché inmutable;
-el resto va por proxy a Node en el 3000.
+(lo inyecta Railway) y sirve `/_next/static` y `/assets` desde disco con caché inmutable; el resto
+va por proxy a Node en el 3000.
 
 ```bash
 docker build -t ugc-landing .
 docker run -e PORT=8080 -p 8080:8080 ugc-landing
 ```
 
-A diferencia del sitio anterior, ahora hay una etapa de build (`npm ci` + `next build`), que
-tarda unos minutos y necesita ≥2 GB de RAM en el builder.
+El healthcheck apunta a `/`, que pasa por el proxy hasta Next a propósito: si solo comprobara algo
+servido por nginx, un Next caído daría 502 con el healthcheck en verde. Por la misma razón, el
+entrypoint tumba el contenedor entero si el proceso de Node muere, en vez de dejar a nginx sirviendo
+errores.
+
+A diferencia del sitio anterior, ahora hay una etapa de build (`npm ci` + `next build`), que tarda
+unos minutos y necesita ≥2 GB de RAM en el builder. Conviene comprobar ese límite antes del primer
+despliegue.
 
 ## Rendimiento
 
