@@ -25,27 +25,15 @@ type StepVideoProps = {
 export function StepVideo({ src, poster, className, bare }: StepVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const inView = useInView(ref, { amount: 0.3 });
-  /**
-   * Umbral aparte, más generoso, solo para decidir cuándo vale la pena descargar.
-   *
-   * El poster es un atributo de imagen: se descarga en cuanto está en el marcado, aunque
-   * el vídeo no se reproduzca. Los tres pósters suman 130 KB y esta sección está muy por
-   * debajo del pliegue, así que antes se bajaban en la carga inicial sin que nadie los
-   * viera. Con `once` no se vuelven a soltar una vez cargados.
-   */
-  const nearViewport = useInView(ref, { margin: "400px", once: true });
   const reduce = useReducedMotion();
 
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
     v.muted = true;
-    // `nearViewport` va en las dependencias porque es lo que adjunta el src: sin él, si el
-    // elemento ya estaba a la vista cuando llega la fuente, el play() se pierde y el vídeo
-    // se queda congelado en el primer fotograma.
-    if (nearViewport && inView && !reduce) v.play().catch(() => {});
+    if (inView && !reduce) v.play().catch(() => {});
     else v.pause();
-  }, [nearViewport, inView, reduce]);
+  }, [inView, reduce]);
 
   return (
     <div
@@ -59,12 +47,12 @@ export function StepVideo({ src, poster, className, bare }: StepVideoProps) {
         ref={ref}
         // Misma proporción que el video (1600×910 = la grabación original completa): sin recortes
         className={cn("block aspect-[1600/910] w-full", className)}
-        src={nearViewport ? src : undefined}
-        poster={nearViewport ? poster : undefined}
+        src={src}
+        poster={poster}
         muted
         loop
         playsInline
-        preload="none"
+        preload="metadata"
         disablePictureInPicture
         disableRemotePlayback
         aria-hidden
