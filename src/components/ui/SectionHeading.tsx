@@ -56,8 +56,8 @@ export function SectionHeading({
           {accent ? (
             <>
               <span className="block">{title}</span>
-              {/* Mismo morado de marca (#8852a2) sobre fondo claro u oscuro: es un titular grande (contraste AA para texto grande) */}
-              <span className="block text-brand-600">
+              {/* El primario (#5D2978) solo contrasta sobre claro; sobre oscuro sube a brand-300 */}
+              <span className={cn("block", dark ? "text-brand-300" : "text-brand-600")}>
                 {accent}
                 <span aria-hidden>.</span>
               </span>
@@ -65,7 +65,7 @@ export function SectionHeading({
           ) : (
             <>
               {title}
-              <span aria-hidden className="text-brand-600">
+              <span aria-hidden className={dark ? "text-brand-300" : "text-brand-600"}>
                 .
               </span>
             </>

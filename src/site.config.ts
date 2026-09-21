@@ -35,6 +35,22 @@ export const siteConfig = {
     location: "Lima, Perú",
   },
 
+  /**
+   * Datos registrales de la empresa.
+   *
+   * TikTok for Developers pide que los datos de la validación de empresa coincidan con
+   * los que muestra el sitio, así que el footer los publica. Mientras estén vacíos, el
+   * bloque no se renderiza: es preferible no mostrarlos a mostrarlos inventados, que es
+   * causa declarada de rechazo en la revisión.
+   *
+   * [POR CONFIRMAR] razón social exacta, RUC y domicilio fiscal.
+   */
+  company: {
+    legalName: "",
+    taxId: "",
+    address: "",
+  },
+
   // Destino de TODOS los botones "Contáctanos" (navbar, hero, planes, etc.): el WhatsApp de UGConnect.
   // contactUrl = mensaje de marca; contactAgencyUrl = mensaje de agencia (pestaña/planes de agencias).
   // El formulario de la página sigue existiendo al final (#contacto), pero ningún botón lo enlaza.
@@ -48,19 +64,23 @@ export const siteConfig = {
   // Destino del botón "Iniciar sesión" (navbar y menú móvil).
   loginUrl: "https://app.ugconnect.pe/",
 
-  // [POR CONFIRMAR] perfiles reales de redes sociales
+  // Perfiles reales, tomados de llms.txt del sitio anterior.
+  // [POR CONFIRMAR] linkedin y youtube: no hay perfil publicado todavía.
   social: {
-    linkedin: "#",
-    instagram: "#",
-    tiktok: "#",
-    youtube: "#",
+    linkedin: "",
+    instagram: "https://www.instagram.com/ugconnect.pe/",
+    tiktok: "https://www.tiktok.com/@ugconnect.pe",
+    youtube: "",
   },
 
-  // [POR CONFIRMAR] páginas legales reales
+  // URLs legales publicadas. Son las que se registran como URL properties en
+  // TikTok for Developers, así que no pueden cambiar sin volver a verificar el dominio.
+  // La política de cookies vive dentro de la de privacidad (sección 8).
   legal: {
-    privacy: "#",
-    terms: "#",
-    cookies: "#",
+    privacy: "/legal/privacy-policy/",
+    terms: "/legal/terminos-marcas-agencias-ugconnect.html",
+    termsCreators: "/legal/terminos-creadores-ugconnect.html",
+    cookies: "/legal/privacy-policy/#section-8-cookies",
   },
 
   features: {

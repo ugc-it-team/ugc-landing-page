@@ -96,11 +96,16 @@ export function Footer() {
             <p className="mt-7 text-sm font-bold text-white">{footer.socialTitle}</p>
             <ul className="mt-4 flex gap-3">
               {socials.map((key) => {
+                const href = siteConfig.social[key];
+                // Sin perfil publicado todavía: mejor omitir el icono que enlazar a "#".
+                if (!href) return null;
                 const Icon = socialIcons[key];
                 return (
                   <li key={key}>
                     <a
-                      href={siteConfig.social[key]}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={footer.socialLabels[key]}
                       className="flex size-11 items-center justify-center rounded-full border border-white/15 text-white/80 transition-[transform,background-color,border-color,color] duration-200 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:text-white"
                     >
@@ -118,7 +123,7 @@ export function Footer() {
             © {footer.year} {siteConfig.name}. {footer.rights}
           </p>
           <p lang="en" aria-hidden className="font-display font-semibold text-white/60">
-            UGC<span className="text-brand-600">.</span>
+            UGC<span className="text-brand-300">.</span>
           </p>
         </div>
       </Container>

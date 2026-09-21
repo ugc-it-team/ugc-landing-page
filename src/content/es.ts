@@ -550,7 +550,8 @@ export const footer = {
   legalTitle: "Legal",
   legal: [
     { key: "privacy", label: "Política de privacidad" },
-    { key: "terms", label: "Términos y condiciones" },
+    { key: "terms", label: "Términos para marcas y agencias" },
+    { key: "termsCreators", label: "Términos para creadores" },
     { key: "cookies", label: "Política de cookies" },
   ],
   contactTitle: "Contacto",
