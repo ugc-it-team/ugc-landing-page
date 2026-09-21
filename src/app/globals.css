@@ -118,10 +118,23 @@
 }
 
 html {
-  scroll-behavior: smooth;
   /* Compensa la barra fija al saltar a un ancla */
   scroll-padding-top: calc(var(--nav-h) + 0.5rem);
   -webkit-text-size-adjust: 100%;
+}
+
+/*
+  Scroll suave, pero NO durante la carga inicial.
+
+  Con `scroll-behavior: smooth` en html, el navegador se salta el desplazamiento
+  automático al fragmento al abrir una URL con ancla: entrar a /#planes desde una
+  página legal aterrizaba arriba del todo. Al acotarlo a `:focus-within` no hay nada
+  enfocado mientras carga, así que el salto inicial es instantáneo y funciona; en
+  cuanto el usuario pulsa un enlace, este recibe el foco y el scroll vuelve a ser
+  suave. Cero JavaScript.
+*/
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -169,7 +182,8 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
-  html {
+  html,
+  html:focus-within {
     scroll-behavior: auto;
   }
   .marquee-track {

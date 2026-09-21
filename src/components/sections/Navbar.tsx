@@ -58,7 +58,7 @@ export function Navbar() {
         aria-label="Principal"
         className="relative mx-auto flex h-[var(--nav-h)] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
       >
-        <a href="#inicio" aria-label="UGConnect, ir al inicio" className="flex items-center">
+        <a href="/#inicio" aria-label="UGConnect, ir al inicio" className="flex items-center">
           {/* Logo completo en escritorio/tablet, reducido en móvil */}
           <Logo variant="full" priority className="hidden h-10 md:block" />
           <Logo variant="short" priority className="h-7 md:hidden" />

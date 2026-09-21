@@ -25,10 +25,10 @@ export const stats = {
 export const nav = {
   // Navbar reducido a lo esencial. El footer conserva la lista completa (ver `footer.links`).
   links: [
-    { label: "Cómo funciona", href: "#como-funciona" },
-    { label: "Para quién", href: "#para-quien" },
-    { label: "Planes", href: "#planes" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Cómo funciona", href: "/#como-funciona" },
+    { label: "Para quién", href: "/#para-quien" },
+    { label: "Planes", href: "/#planes" },
+    { label: "FAQ", href: "/#faq" },
   ],
   cta: "Contáctanos",
   ctaHint: "por WhatsApp (se abre en una pestaña nueva)",
@@ -540,12 +540,12 @@ export const footer = {
     "La plataforma para crear y gestionar campañas con creadores, con acompañamiento consultivo para maximizar tus resultados.",
   navTitle: "Navegación",
   links: [
-    { label: "Plataforma", href: "#plataforma" },
-    { label: "Cómo funciona", href: "#como-funciona" },
-    { label: "Acompañamiento", href: "#acompanamiento" },
-    { label: "Para quién", href: "#para-quien" },
-    { label: "Planes", href: "#planes" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Plataforma", href: "/#plataforma" },
+    { label: "Cómo funciona", href: "/#como-funciona" },
+    { label: "Acompañamiento", href: "/#acompanamiento" },
+    { label: "Para quién", href: "/#para-quien" },
+    { label: "Planes", href: "/#planes" },
+    { label: "FAQ", href: "/#faq" },
   ],
   legalTitle: "Legal",
   legal: [

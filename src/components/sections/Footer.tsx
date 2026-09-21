@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-[1.6fr_1fr_1fr_1.2fr]">
           {/* Marca */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#inicio" aria-label="UGConnect, ir al inicio" className="inline-block">
+            <a href="/#inicio" aria-label="UGConnect, ir al inicio" className="inline-block">
               <Logo variant="full" tone="dark" className="h-12" />
             </a>
             <p className="mt-5 max-w-xs text-[0.95rem] leading-relaxed text-white/70">
