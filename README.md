@@ -53,11 +53,15 @@ profundos ya publicados: no los "limpies" ni añadas `rehype-slug`.
 
 ## Verificación de TikTok
 
-Pendiente de completar. Hace falta:
+El archivo de firma ya está en `public/tiktokmojI5cmvy9vkQzI7mlyiBHGKQl08qHd4.txt` y se sirve en
+la raíz. **No lo borres:** TikTok revalida cada cierto tiempo y si desaparece el dominio queda sin
+verificar, lo que tumba la revisión de la app.
 
-1. Verificar el dominio en TikTok for Developers → URL properties. Recomendado el registro
-   **DNS TXT**, que cubre `ugconnect.pe` y sus subdominios de una vez. La alternativa es el
-   archivo de firma, que iría en `public/` y se serviría solo.
+Queda pendiente:
+
+1. Verificar el dominio en TikTok for Developers → URL properties. Con el archivo de firma basta
+   para el prefijo de URL; el registro **DNS TXT** es preferible porque cubre `ugconnect.pe` y
+   todos sus subdominios de una vez.
 2. Registrar como URL properties la home, la política de privacidad y los términos.
 3. Rellenar `siteConfig.company` (razón social, RUC y domicilio fiscal). Mientras esté vacío el
    footer no muestra el bloque: TikTok rechaza apps con datos incompletos o inventados, así que
