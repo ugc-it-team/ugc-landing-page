@@ -70,7 +70,7 @@ export function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="relative whitespace-nowrap text-sm font-medium text-ink/80 transition-colors hover:text-brand-600 after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-brand-500 after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:after:scale-x-100"
+                className="relative whitespace-nowrap text-sm font-medium text-ink/80 transition-colors hover:text-brand-600 after:absolute after:inset-x-0 after:-bottom-1.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-brand-600 after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:after:scale-x-100"
               >
                 {link.label}
               </a>

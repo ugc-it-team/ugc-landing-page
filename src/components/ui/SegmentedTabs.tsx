@@ -73,7 +73,7 @@ export function SegmentedTabs({
               <motion.span
                 layoutId={layoutId}
                 aria-hidden
-                className="absolute inset-0 rounded-full bg-brand-500 shadow-[0_10px_24px_-10px_rgba(136,82,162,0.8)]"
+                className="absolute inset-0 rounded-full bg-brand-600 shadow-[0_10px_24px_-10px_rgba(93,41,120,0.8)]"
                 transition={{ type: "spring", stiffness: 420, damping: 34 }}
               />
             )}

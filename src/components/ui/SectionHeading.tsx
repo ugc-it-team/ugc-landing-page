@@ -41,7 +41,7 @@ export function SectionHeading({
               : "border-brand-200 bg-brand-50 text-brand-700",
           )}
         >
-          <span aria-hidden className={cn("size-1.5 rounded-full", dark ? "bg-brand-400" : "bg-brand-500")} />
+          <span aria-hidden className={cn("size-1.5 rounded-full", dark ? "bg-brand-400" : "bg-brand-600")} />
           {eyebrow}
         </p>
       </Reveal>
@@ -57,7 +57,7 @@ export function SectionHeading({
             <>
               <span className="block">{title}</span>
               {/* Mismo morado de marca (#8852a2) sobre fondo claro u oscuro: es un titular grande (contraste AA para texto grande) */}
-              <span className="block text-brand-500">
+              <span className="block text-brand-600">
                 {accent}
                 <span aria-hidden>.</span>
               </span>
@@ -65,7 +65,7 @@ export function SectionHeading({
           ) : (
             <>
               {title}
-              <span aria-hidden className="text-brand-500">
+              <span aria-hidden className="text-brand-600">
                 .
               </span>
             </>

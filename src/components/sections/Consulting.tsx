@@ -29,7 +29,7 @@ export function Consulting() {
       >
         <div
           className="absolute -right-[10%] -top-[10%] size-[36rem] max-w-[90vw]"
-          style={{ background: "radial-gradient(closest-side, rgba(136,82,162,0.28), transparent)" }}
+          style={{ background: "radial-gradient(closest-side, rgba(93,41,120,0.28), transparent)" }}
         />
       </div>
 
@@ -47,7 +47,7 @@ export function Consulting() {
             />
             <Reveal delay={0.2}>
               <p className="mt-7 inline-flex max-w-md items-start gap-2.5 rounded-2xl border border-brand-400/40 bg-brand-900/40 px-4 py-3 text-sm font-medium leading-snug text-white">
-                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
+                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
                   <IconCheck className="size-3" />
                 </span>
                 <span>
@@ -100,7 +100,7 @@ export function Consulting() {
                 <div>
                   <h3 className="text-balance font-display text-2xl font-extrabold leading-tight sm:text-3xl">
                     <span className="block">{consulting.autonomy.title}</span>
-                    <span className="block text-brand-500">
+                    <span className="block text-brand-600">
                       {consulting.autonomy.titleAccent}
                       <span aria-hidden>.</span>
                     </span>
@@ -118,7 +118,7 @@ export function Consulting() {
                         key={s.title}
                         className={
                           last
-                            ? "rounded-2xl border border-brand-400/60 bg-gradient-to-br from-brand-800/70 to-brand-950 p-5 shadow-[0_0_60px_-24px_rgba(136,82,162,0.9)]"
+                            ? "rounded-2xl border border-brand-400/60 bg-gradient-to-br from-brand-800/70 to-brand-950 p-5 shadow-[0_0_60px_-24px_rgba(93,41,120,0.9)]"
                             : "rounded-2xl border border-white/10 bg-white/[0.03] p-5"
                         }
                       >

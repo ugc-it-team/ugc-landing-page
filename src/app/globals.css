@@ -2,30 +2,39 @@
 
 /*
   TEMA DE MARCA — único lugar donde viven los colores y las fuentes.
-  Para cambiar el morado, edita solo esta escala.
+  Rampa oficial del branding (Branding UGConnect.pdf, p.8); la copia legible de
+  los tokens originales está en docs/design-system/colors.css.
+
+  Ojo al migrar código de la plantilla: allí el morado de marca era #8852a2, que
+  en el branding oficial es el SECUNDARIO. El primario es brand-600 (#5D2978).
 
   Contraste (AA):
-  - brand-500 (#8852a2) sobre blanco = 5,56:1  → sirve para texto.
-  - brand-500 sobre casi negro (#0a0a0a) = 3,56:1 → NO usar en texto pequeño;
-    ahí usa blanco o brand-400 (6,91:1) / brand-300.
+  - brand-600 (#5D2978) sobre blanco = 9,4:1 → AAA, es el color de texto y botones.
+  - brand-300 (#B78ACD) NUNCA como texto principal sobre blanco (regla del branding).
+  - Sobre fondo oscuro (ink #16101C) usa blanco, brand-300 o brand-200.
 */
 @theme {
-  --color-brand-50: #f8f4fa;
-  --color-brand-100: #f2eaf6;
-  --color-brand-200: #e4d6eb;
-  --color-brand-300: #cdb4da;
-  --color-brand-400: #b389c8;
-  --color-brand-500: #8852a2; /* morado de marca */
-  --color-brand-600: #6e4384;
-  --color-brand-700: #583569;
-  --color-brand-800: #3e254b;
-  --color-brand-900: #2b1834;
-  --color-brand-950: #1a0e20;
+  --color-brand-50: #f5eff8;
+  --color-brand-100: #e7d6f0;
+  --color-brand-200: #d3b6e2;
+  --color-brand-300: #b78acd; /* acento suave */
+  --color-brand-400: #a571bc;
+  --color-brand-500: #8852a2; /* secundario */
+  --color-brand-600: #5d2978; /* PRIMARIO */
+  --color-brand-700: #4a1f62; /* hover */
+  --color-brand-800: #39164c; /* deep / press */
+  --color-brand-900: #2a0f38;
+  --color-brand-950: #1a0922;
 
-  /* Casi negro para fondos oscuros y texto. El negro puro es solo del logo. */
-  --color-ink: #0a0a0a;
-  --color-ink-soft: #1a1a1f;
-  --color-muted: #55505c; /* texto secundario sobre blanco (≈7,9:1) */
+  /* Casi negro con un leve matiz morado. El negro puro es solo del logo. */
+  --color-ink: #16101c;
+  --color-ink-soft: #3a3340;
+  --color-muted: #6b6472; /* texto secundario sobre blanco */
+  --color-line: #e7e2ec; /* bordes de un pelo sobre claro */
+  --color-surface: #fbf9fc; /* lienzo apagado */
+
+  --radius-pill: 999px;
+  --shadow-brand: 0 10px 30px rgb(93 41 120 / 0.32);
 
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -79,13 +88,29 @@
 }
 
 /*
-  Fuentes (cargadas con next/font en layout.tsx):
-  - Titulares: Montserrat (la más cercana al logo: geométrica, ancha y gruesa).
-  - Cuerpo: Inter (limpia y legible).
+  Fuentes del branding oficial (cargadas con next/font/local en src/lib/fonts.ts):
+  - Titulares: Garet (Book y Heavy).
+  - Cuerpo: Poppins (400/500/600/700/800).
 */
 @theme inline {
-  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-garet), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+  Alias semánticos del design system original. Los mantiene vivos para el CSS
+  heredado (documentos legales) sin duplicar la definición del color: todo
+  apunta al @theme de arriba, que sigue siendo el único origen de verdad.
+*/
+:root {
+  --brand-primary: var(--color-brand-600);
+  --brand-primary-hover: var(--color-brand-700);
+  --brand-primary-press: var(--color-brand-800);
+  --text-strong: var(--color-ink);
+  --text-muted: var(--color-muted);
+  --surface-sunken: var(--color-brand-50);
+  --hairline: var(--color-line);
+  --font-ui: var(--font-sans);
 }
 
 :root {

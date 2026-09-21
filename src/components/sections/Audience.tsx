@@ -62,7 +62,7 @@ export function Audience() {
                 <div>
                   <h3 className="text-balance font-display text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
                     <span className="block">{tab.headline}</span>
-                    <span className="block text-brand-500">
+                    <span className="block text-brand-600">
                       {tab.headlineAccent}
                       <span aria-hidden>.</span>
                     </span>
@@ -77,7 +77,7 @@ export function Audience() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 + i * 0.07, ease: EASE }}
                       >
-                        <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
+                        <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
                           <IconCheck className="size-3.5" />
                         </span>
                         {b}
@@ -111,7 +111,7 @@ export function Audience() {
                       >
                         <span
                           aria-hidden
-                          className="relative z-10 flex size-[2.15rem] shrink-0 items-center justify-center rounded-full border-2 border-brand-500 bg-white font-display text-sm font-bold text-brand-600"
+                          className="relative z-10 flex size-[2.15rem] shrink-0 items-center justify-center rounded-full border-2 border-brand-600 bg-white font-display text-sm font-bold text-brand-600"
                         >
                           {i + 1}
                         </span>

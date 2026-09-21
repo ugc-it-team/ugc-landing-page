@@ -14,7 +14,7 @@ export function CampaignMock() {
           className={cn(
             "rounded-full px-3 py-1.5 text-xs font-semibold",
             active.includes(i)
-              ? "bg-brand-500 text-white"
+              ? "bg-brand-600 text-white"
               : "border border-brand-200 bg-white text-ink",
           )}
         >
@@ -52,7 +52,7 @@ export function CampaignMock() {
           <div className="space-y-1.5">
             <MockLabel>{m.dateLabel}</MockLabel>
             <div className="flex items-center gap-2 rounded-xl border border-brand-200 bg-white px-3.5 py-2.5">
-              <svg aria-hidden viewBox="0 0 20 20" className="size-4 text-brand-500" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              <svg aria-hidden viewBox="0 0 20 20" className="size-4 text-brand-600" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
                 <rect x="3" y="4.5" width="14" height="12" rx="2.5" />
                 <path d="M3 8.5h14M7 3v3M13 3v3" />
               </svg>
@@ -61,7 +61,7 @@ export function CampaignMock() {
           </div>
         </div>
         <div className="flex justify-end">
-          <span className="rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(136,82,162,0.8)]">
+          <span className="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(93,41,120,0.8)]">
             {m.cta}
           </span>
         </div>

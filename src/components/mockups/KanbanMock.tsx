@@ -52,7 +52,7 @@ export function KanbanMock() {
             </p>
           </div>
           <div className="ml-auto flex max-w-[85%] items-start justify-end gap-2">
-            <p className="rounded-2xl rounded-tr-md bg-brand-500 px-3 py-2 text-xs text-white">
+            <p className="rounded-2xl rounded-tr-md bg-brand-600 px-3 py-2 text-xs text-white">
               {m.chatCreator}
             </p>
             <MockAvatar letter="C" index={2} className="size-6 text-[10px]" />

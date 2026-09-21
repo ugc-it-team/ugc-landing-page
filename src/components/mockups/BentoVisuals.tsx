@@ -16,7 +16,7 @@ export function MatchingVisual() {
   return (
     <div className="flex h-44 items-stretch gap-0" aria-hidden>
       <div className="flex items-center">
-        <span className="rounded-2xl bg-brand-500 px-3.5 py-2.5 text-xs font-bold text-white shadow-[0_12px_28px_-10px_rgba(136,82,162,0.8)] transition-transform duration-300 group-hover:scale-105">
+        <span className="rounded-2xl bg-brand-600 px-3.5 py-2.5 text-xs font-bold text-white shadow-[0_12px_28px_-10px_rgba(93,41,120,0.8)] transition-transform duration-300 group-hover:scale-105">
           {f.brief}
         </span>
       </div>
@@ -51,7 +51,7 @@ export function MatchingVisual() {
             className={cn(
               "flex h-[3.1rem] items-center gap-2.5 rounded-2xl border bg-white px-2.5 transition-[transform,box-shadow,border-color] duration-300",
               i === 0
-                ? "border-brand-200 group-hover:-translate-x-1 group-hover:border-brand-500 group-hover:shadow-[0_0_0_3px_rgba(136,82,162,0.16)]"
+                ? "border-brand-200 group-hover:-translate-x-1 group-hover:border-brand-600 group-hover:shadow-[0_0_0_3px_rgba(93,41,120,0.16)]"
                 : "border-brand-100",
             )}
           >
@@ -62,7 +62,7 @@ export function MatchingVisual() {
                 {Array.from({ length: 5 }).map((_, k) => (
                   <span
                     key={k}
-                    className={cn("h-1 flex-1 rounded-full", k < fits[i] ? "bg-brand-500" : "bg-brand-100")}
+                    className={cn("h-1 flex-1 rounded-full", k < fits[i] ? "bg-brand-600" : "bg-brand-100")}
                   />
                 ))}
               </span>
@@ -128,7 +128,7 @@ export function ChatVisual() {
         <p className="rounded-2xl rounded-tl-md bg-brand-50 px-3 py-2 text-xs text-ink">{b[0]}</p>
       </div>
       <div className="ml-auto flex max-w-[88%] items-start justify-end gap-2">
-        <p className="rounded-2xl rounded-tr-md bg-brand-500 px-3 py-2 text-xs text-white">{b[1]}</p>
+        <p className="rounded-2xl rounded-tr-md bg-brand-600 px-3 py-2 text-xs text-white">{b[1]}</p>
         <MockAvatar letter="C" index={2} className="size-6 text-[10px]" />
       </div>
       <div className="flex max-w-[88%] translate-y-2 items-start gap-2 opacity-0 transition-[transform,opacity] duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -196,7 +196,7 @@ export function ChartVisual() {
       <div className="mb-3 flex items-center gap-2">
         <span className="relative flex size-2">
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand-400 opacity-60 motion-reduce:animate-none" />
-          <span className="relative inline-flex size-2 rounded-full bg-brand-500" />
+          <span className="relative inline-flex size-2 rounded-full bg-brand-600" />
         </span>
         <span className="text-[11px] font-bold uppercase tracking-wider text-brand-700">{f.live}</span>
       </div>

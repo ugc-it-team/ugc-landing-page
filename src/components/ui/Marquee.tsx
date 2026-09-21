@@ -16,7 +16,7 @@ export function Marquee({ label, items }: MarqueeProps) {
           key={item}
           className="flex items-center gap-2.5 rounded-full border border-brand-200 bg-white px-5 py-2.5 text-sm font-semibold text-ink"
         >
-          <span aria-hidden className="size-1.5 rounded-full bg-brand-500" />
+          <span aria-hidden className="size-1.5 rounded-full bg-brand-600" />
           {item}
         </li>
       ))}

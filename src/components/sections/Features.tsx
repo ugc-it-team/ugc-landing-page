@@ -31,8 +31,8 @@ function FeatureCard({ title, text, visual, className, tone = "light", wide, del
         className={cn(
           "group relative flex h-full flex-col overflow-hidden rounded-3xl border p-6 transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1.5 sm:p-8",
           brand
-            ? "border-brand-600 bg-brand-500 text-white hover:shadow-[0_34px_60px_-26px_rgba(110,67,132,0.8)]"
-            : "border-brand-100 bg-white hover:shadow-[0_34px_60px_-30px_rgba(110,67,132,0.5)]",
+            ? "border-brand-600 bg-brand-600 text-white hover:shadow-[0_34px_60px_-26px_rgba(93,41,120,0.8)]"
+            : "border-brand-100 bg-white hover:shadow-[0_34px_60px_-30px_rgba(93,41,120,0.5)]",
           wide && "md:flex-row md:items-center md:gap-8",
         )}
       >

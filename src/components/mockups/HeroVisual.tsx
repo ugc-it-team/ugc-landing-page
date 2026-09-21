@@ -95,7 +95,7 @@ export function HeroVisual() {
           initial={{ opacity: 0, y: 48, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
-          className="overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-[0_40px_100px_-30px_rgba(110,67,132,0.45)]"
+          className="overflow-hidden rounded-3xl border border-brand-100 bg-white shadow-[0_40px_100px_-30px_rgba(93,41,120,0.45)]"
         >
           {/* Barra superior */}
           <div className="flex items-center gap-3 border-b border-brand-100 bg-white px-4 py-3 sm:px-5">
@@ -189,7 +189,7 @@ export function HeroVisual() {
       >
         <div className={card}>
           <div className="flex items-center gap-2.5">
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand-500 text-white">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white">
               <svg aria-hidden viewBox="0 0 20 20" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 5h12v9H8l-4 3V5Z" />
               </svg>

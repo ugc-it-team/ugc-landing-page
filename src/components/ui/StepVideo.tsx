@@ -40,7 +40,7 @@ export function StepVideo({ src, poster, className, bare }: StepVideoProps) {
       className={
         bare
           ? undefined
-          : "overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-[0_30px_70px_-30px_rgba(110,67,132,0.45)]"
+          : "overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-[0_30px_70px_-30px_rgba(93,41,120,0.45)]"
       }
     >
       <video

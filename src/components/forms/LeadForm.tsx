@@ -23,7 +23,7 @@ const f = finalCta.form;
 
 const inputBase =
   "w-full rounded-xl border bg-white px-4 text-base text-ink transition-[border-color,box-shadow] duration-200 placeholder:text-[#736e7c] focus:outline-none focus:ring-4";
-const inputOk = "border-ink/15 focus:border-brand-500 focus:ring-brand-500/20";
+const inputOk = "border-ink/15 focus:border-brand-600 focus:ring-brand-600/20";
 const inputBad = "border-red-600 focus:border-red-600 focus:ring-red-600/20";
 
 /**
@@ -104,7 +104,7 @@ export function LeadForm() {
             initial={{ scale: 0.4, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 18 }}
-            className="flex size-16 items-center justify-center rounded-full bg-brand-500 text-white shadow-[0_14px_30px_-10px_rgba(136,82,162,0.9)]"
+            className="flex size-16 items-center justify-center rounded-full bg-brand-600 text-white shadow-[0_14px_30px_-10px_rgba(93,41,120,0.9)]"
           >
             <IconCheck className="size-8" />
           </motion.span>
@@ -138,7 +138,7 @@ export function LeadForm() {
     <form onSubmit={onSubmit} noValidate className={shell} aria-labelledby="form-title">
       <h3 id="form-title" className="font-display text-2xl font-extrabold text-ink">
         {f.title}
-        <span aria-hidden className="text-brand-500">
+        <span aria-hidden className="text-brand-600">
           .
         </span>
       </h3>
@@ -218,7 +218,7 @@ export function LeadForm() {
                 key={opt.value}
                 className={cn(
                   "flex h-12 cursor-pointer items-center justify-center rounded-xl border bg-white px-3 text-sm font-semibold text-ink transition-[border-color,background-color,box-shadow] duration-200",
-                  "hover:border-brand-300 has-[:checked]:border-brand-500 has-[:checked]:bg-brand-50 has-[:checked]:text-brand-700 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-brand-500/25",
+                  "hover:border-brand-300 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50 has-[:checked]:text-brand-700 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-brand-600/25",
                   errors.type ? "border-red-600" : "border-ink/15",
                 )}
               >

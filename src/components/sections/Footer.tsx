@@ -118,7 +118,7 @@ export function Footer() {
             © {footer.year} {siteConfig.name}. {footer.rights}
           </p>
           <p lang="en" aria-hidden className="font-display font-semibold text-white/60">
-            UGC<span className="text-brand-500">.</span>
+            UGC<span className="text-brand-600">.</span>
           </p>
         </div>
       </Container>

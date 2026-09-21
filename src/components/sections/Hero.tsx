@@ -26,7 +26,7 @@ export function Hero() {
           <p className="inline-block max-w-full text-balance rounded-2xl border border-brand-200 bg-white/80 px-4 py-1.5 text-center text-[11px] font-semibold leading-snug text-brand-700 backdrop-blur min-[400px]:text-xs sm:rounded-full sm:text-sm">
             <span
               aria-hidden
-              className="mr-2 inline-block size-1.5 rounded-full bg-brand-500 align-middle"
+              className="mr-2 inline-block size-1.5 rounded-full bg-brand-600 align-middle"
             />
             {hero.eyebrow}
           </p>
@@ -39,7 +39,7 @@ export function Hero() {
           >
             <span className="block text-balance">{hero.titleLine1}</span>
             {/* Punto de marca: el titular termina en un punto morado */}
-            <span className="block text-balance text-brand-500">
+            <span className="block text-balance text-brand-600">
               {hero.titleLine2}
               <span aria-hidden>.</span>
             </span>

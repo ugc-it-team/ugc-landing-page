@@ -43,7 +43,7 @@ export function Accordion({ items, idPrefix }: AccordionProps) {
                   className={cn(
                     "flex size-9 shrink-0 items-center justify-center rounded-full transition-[transform,background-color,color] duration-300",
                     isOpen
-                      ? "rotate-180 bg-brand-500 text-white"
+                      ? "rotate-180 bg-brand-600 text-white"
                       : "bg-brand-100 text-brand-600 group-hover:bg-brand-200",
                   )}
                 >

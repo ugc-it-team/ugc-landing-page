@@ -16,7 +16,7 @@ export function CreatorsMock() {
               className={cn(
                 "rounded-2xl border bg-white p-3.5",
                 i === 0
-                  ? "border-brand-500 shadow-[0_0_0_3px_rgba(136,82,162,0.14)]"
+                  ? "border-brand-600 shadow-[0_0_0_3px_rgba(93,41,120,0.14)]"
                   : "border-brand-100",
               )}
             >
@@ -32,7 +32,7 @@ export function CreatorsMock() {
                 {Array.from({ length: 5 }).map((_, k) => (
                   <span
                     key={k}
-                    className={cn("h-1.5 flex-1 rounded-full", k < c.fit ? "bg-brand-500" : "bg-brand-100")}
+                    className={cn("h-1.5 flex-1 rounded-full", k < c.fit ? "bg-brand-600" : "bg-brand-100")}
                   />
                 ))}
               </div>

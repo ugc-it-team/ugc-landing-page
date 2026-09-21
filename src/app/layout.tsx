@@ -1,22 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { MotionProvider } from "@/components/ui/MotionProvider";
+import { garet, poppins } from "@/lib/fonts";
 import { siteConfig } from "@/site.config";
 import { meta } from "@/content/es";
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -52,7 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es-PE"
       data-scroll-behavior="smooth"
-      className={`${montserrat.variable} ${inter.variable}`}
+      className={`${garet.variable} ${poppins.variable}`}
     >
       <body className="min-h-screen bg-white font-sans text-ink antialiased">
         <a

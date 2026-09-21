@@ -23,7 +23,7 @@ export type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-brand-500 text-white shadow-[0_10px_30px_-10px_rgba(136,82,162,0.7)] hover:bg-brand-600",
+    "bg-brand-600 text-white shadow-[0_10px_30px_-10px_rgba(93,41,120,0.7)] hover:bg-brand-700",
   secondary: "border border-brand-200 bg-white text-ink hover:border-brand-300 hover:bg-brand-50",
   light: "bg-white text-ink hover:bg-brand-100",
   outlineLight: "border border-white/25 text-white hover:border-white/50 hover:bg-white/10",

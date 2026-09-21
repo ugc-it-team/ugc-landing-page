@@ -24,12 +24,12 @@ function PlanCard({ plan, audience }: { plan: Plan; audience: "marca" | "agencia
       className={cn(
         "relative flex h-full w-full flex-col rounded-3xl bg-white p-7 transition-[transform,box-shadow,border-color] duration-300 ease-out sm:p-8",
         recommended
-          ? "border-2 border-brand-500 shadow-[0_40px_90px_-32px_rgba(136,82,162,0.65)] lg:-translate-y-3 lg:hover:-translate-y-4"
-          : "border border-brand-200 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_34px_60px_-32px_rgba(110,67,132,0.5)]",
+          ? "border-2 border-brand-600 shadow-[0_40px_90px_-32px_rgba(93,41,120,0.65)] lg:-translate-y-3 lg:hover:-translate-y-4"
+          : "border border-brand-200 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-[0_34px_60px_-32px_rgba(93,41,120,0.5)]",
       )}
     >
       {recommended && (
-        <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-brand-500 px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_-10px_rgba(136,82,162,0.9)]">
+        <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-brand-600 px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white shadow-[0_10px_24px_-10px_rgba(93,41,120,0.9)]">
           {plans.recommended}
         </span>
       )}
@@ -73,7 +73,7 @@ function PlanCard({ plan, audience }: { plan: Plan; audience: "marca" | "agencia
         ))}
         {plan.consulting && (
           <li className="flex items-start gap-3 rounded-xl bg-brand-50 p-3 text-sm font-semibold leading-snug text-brand-700">
-            <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
+            <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white">
               <IconCheck className="size-3" />
             </span>
             {plans.consultingLabel}
@@ -177,7 +177,7 @@ export function Plans() {
                           className="pointer-events-none absolute -inset-6 -z-10 lg:-inset-10"
                           style={{
                             background:
-                              "radial-gradient(closest-side, rgba(136,82,162,0.22), transparent)",
+                              "radial-gradient(closest-side, rgba(93,41,120,0.22), transparent)",
                           }}
                         />
                       )}

@@ -38,7 +38,7 @@ export function SocialProof() {
               <li key={m.label}>
                 <Reveal delay={i * 0.08} className="h-full">
                   <div className="h-full rounded-3xl border border-brand-100 bg-brand-50 p-6 text-center">
-                    <p className="font-display text-4xl font-extrabold text-brand-500 sm:text-5xl">
+                    <p className="font-display text-4xl font-extrabold text-brand-600 sm:text-5xl">
                       {m.value}
                     </p>
                     <p className="mt-2 text-sm font-medium text-muted">{m.label}</p>
@@ -62,7 +62,7 @@ export function SocialProof() {
                     <figcaption className="mt-6 flex items-center gap-3">
                       <span
                         aria-hidden
-                        className="flex size-10 items-center justify-center rounded-full bg-brand-500 font-display text-sm font-bold text-white"
+                        className="flex size-10 items-center justify-center rounded-full bg-brand-600 font-display text-sm font-bold text-white"
                       >
                         {t.name[0]}
                       </span>

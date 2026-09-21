@@ -32,14 +32,14 @@ export function Bridge() {
               <li key={card.title}>
                 {/* Entrada escalonada; el hover vive en el <article> para no chocar con la animación */}
                 <Reveal delay={i * 0.09} className="h-full">
-                  <article className="group relative h-full rounded-3xl border border-brand-100 bg-white p-6 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-2 hover:border-brand-300 hover:shadow-[0_32px_60px_-28px_rgba(110,67,132,0.45)] sm:p-7">
+                  <article className="group relative h-full rounded-3xl border border-brand-100 bg-white p-6 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-2 hover:border-brand-300 hover:shadow-[0_32px_60px_-28px_rgba(93,41,120,0.45)] sm:p-7">
                     <div className="flex items-start justify-between">
-                      <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-600 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
+                      <span className="flex size-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
                         <Icon className="size-6" />
                       </span>
                       <span
                         aria-hidden
-                        className="font-display text-sm font-bold text-brand-300 transition-colors group-hover:text-brand-500"
+                        className="font-display text-sm font-bold text-brand-300 transition-colors group-hover:text-brand-600"
                       >
                         0{i + 1}
                       </span>
@@ -64,7 +64,7 @@ export function Bridge() {
                 <CountUp
                   to={stats.creators.value}
                   prefix="+"
-                  className="font-display text-5xl font-extrabold leading-none text-brand-500 sm:text-6xl"
+                  className="font-display text-5xl font-extrabold leading-none text-brand-600 sm:text-6xl"
                 />
                 <span className="mt-1 block text-base font-semibold text-ink">
                   {stats.creators.label}

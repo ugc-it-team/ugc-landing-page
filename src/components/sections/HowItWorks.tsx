@@ -108,7 +108,7 @@ export function HowItWorks() {
                 <motion.span
                   aria-hidden
                   style={{ scaleY: scrollYProgress }}
-                  className="absolute bottom-6 left-[1.4rem] top-6 w-0.5 origin-top rounded-full bg-brand-500"
+                  className="absolute bottom-6 left-[1.4rem] top-6 w-0.5 origin-top rounded-full bg-brand-600"
                 />
                 {steps.map((step, i) => {
                   const isActive = i === active;
@@ -125,9 +125,9 @@ export function HowItWorks() {
                           className={cn(
                             "absolute -left-16 top-3 flex size-11 items-center justify-center rounded-full border-2 font-display text-sm font-bold transition-[transform,background-color,color,border-color] duration-300",
                             isActive
-                              ? "scale-110 border-brand-500 bg-brand-500 text-white shadow-[0_10px_24px_-8px_rgba(136,82,162,0.8)]"
+                              ? "scale-110 border-brand-600 bg-brand-600 text-white shadow-[0_10px_24px_-8px_rgba(93,41,120,0.8)]"
                               : i < active
-                                ? "border-brand-500 bg-white text-brand-600"
+                                ? "border-brand-600 bg-white text-brand-600"
                                 : "border-brand-200 bg-brand-50 text-brand-400",
                           )}
                         >
@@ -225,7 +225,7 @@ export function HowItWorks() {
                   <div className="flex items-center gap-3">
                     <span
                       aria-hidden
-                      className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-500 font-display text-sm font-bold text-white"
+                      className="flex size-10 shrink-0 items-center justify-center rounded-full bg-brand-600 font-display text-sm font-bold text-white"
                     >
                       {i + 1}
                     </span>
