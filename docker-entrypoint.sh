@@ -21,8 +21,20 @@ node_pid=$!
 nginx -c /tmp/nginx/nginx.conf &
 nginx_pid=$!
 
-# Sale en cuanto cualquiera de los dos muera, con su código de salida.
-wait -n "$node_pid" "$nginx_pid"
-code=$?
+# Sale en cuanto cualquiera de los dos muera.
+#
+# Nada de `wait -n "$pid" ...`: el ash de BusyBox acepta los argumentos pero entonces
+# espera a TODOS, así que la caída de Node pasaba desapercibida y nginx seguía sirviendo
+# 502 con el healthcheck en verde. Sondear es feo pero es inequívoco y portable.
+while kill -0 "$node_pid" 2>/dev/null && kill -0 "$nginx_pid" 2>/dev/null; do
+  sleep 2
+done
+
+if ! kill -0 "$node_pid" 2>/dev/null; then
+  echo "entrypoint: el proceso de Next murió; tumbando el contenedor" >&2
+else
+  echo "entrypoint: nginx murió; tumbando el contenedor" >&2
+fi
+
 term
-exit "$code"
+exit 1

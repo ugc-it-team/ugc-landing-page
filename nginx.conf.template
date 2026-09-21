@@ -56,20 +56,28 @@ http {
     add_header Referrer-Policy "strict-origin-when-cross-origin" always;
     add_header X-Frame-Options "SAMEORIGIN" always;
 
+    # Ojo con add_header: nginx NO hereda los del bloque padre en cuanto el hijo
+    # declara uno propio, así que las cabeceras de seguridad se repiten aquí abajo.
+    # Y nada de `expires`, que emite su propio Cache-Control y saldrían dos.
+
     # Estáticos con hash en el nombre: los sirve nginx directo, sin pasar por Node.
     location /_next/static/ {
       alias /app/.next/static/;
       access_log off;
-      expires 1y;
-      add_header Cache-Control "public, max-age=31536000, immutable";
+      add_header Cache-Control "public, max-age=31536000, immutable" always;
+      add_header X-Content-Type-Options "nosniff" always;
+      add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+      add_header X-Frame-Options "SAMEORIGIN" always;
     }
 
     # Assets del sitio (logos de marcas, imágenes).
     location /assets/ {
       alias /app/public/assets/;
       access_log off;
-      expires 1y;
-      add_header Cache-Control "public, max-age=31536000, immutable";
+      add_header Cache-Control "public, max-age=31536000, immutable" always;
+      add_header X-Content-Type-Options "nosniff" always;
+      add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+      add_header X-Frame-Options "SAMEORIGIN" always;
     }
 
     location / {
