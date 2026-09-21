@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/*
+  TEMA DE MARCA — único lugar donde viven los colores y las fuentes.
+  Para cambiar el morado, edita solo esta escala.
+
+  Contraste (AA):
+  - brand-500 (#8852a2) sobre blanco = 5,56:1  → sirve para texto.
+  - brand-500 sobre casi negro (#0a0a0a) = 3,56:1 → NO usar en texto pequeño;
+    ahí usa blanco o brand-400 (6,91:1) / brand-300.
+*/
+@theme {
+  --color-brand-50: #f8f4fa;
+  --color-brand-100: #f2eaf6;
+  --color-brand-200: #e4d6eb;
+  --color-brand-300: #cdb4da;
+  --color-brand-400: #b389c8;
+  --color-brand-500: #8852a2; /* morado de marca */
+  --color-brand-600: #6e4384;
+  --color-brand-700: #583569;
+  --color-brand-800: #3e254b;
+  --color-brand-900: #2b1834;
+  --color-brand-950: #1a0e20;
+
+  /* Casi negro para fondos oscuros y texto. El negro puro es solo del logo. */
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #1a1a1f;
+  --color-muted: #55505c; /* texto secundario sobre blanco (≈7,9:1) */
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-blob-a: blob-a 34s ease-in-out infinite;
+  --animate-blob-b: blob-b 42s ease-in-out infinite;
+  --animate-blob-c: blob-c 38s ease-in-out infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+  @keyframes blob-a {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(6%, 8%, 0) scale(1.12);
+    }
+  }
+  @keyframes blob-b {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1.05);
+    }
+    50% {
+      transform: translate3d(-8%, 5%, 0) scale(0.95);
+    }
+  }
+  @keyframes blob-c {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(5%, -7%, 0) scale(1.1);
+    }
+  }
+}
+
+/*
+  Fuentes (cargadas con next/font en layout.tsx):
+  - Titulares: Montserrat (la más cercana al logo: geométrica, ancha y gruesa).
+  - Cuerpo: Inter (limpia y legible).
+*/
+@theme inline {
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --nav-h: 4.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa la barra fija al saltar a un ancla */
+  scroll-padding-top: calc(var(--nav-h) + 0.5rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Foco visible para navegación por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--color-brand-300);
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-ink);
+}
+
+/* Marquesina: la pausa al pasar el cursor o enfocar */
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Logo animado del hero: vídeo por defecto, PNG estático con movimiento reducido.
+   El aspect-ratio reserva el hueco para que el hero no provoque CLS al cargar. */
+.animated-logo {
+  aspect-ratio: 1026 / 132;
+}
+.animated-logo img {
+  display: none;
+}
+
+/* Movimiento reducido: sin marquesina, sin manchas, sin flotación, scroll inmediato */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100% !important;
+  }
+  .marquee-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0 !important;
+  }
+  .marquee-dup {
+    display: none !important;
+  }
+  .brand-blob,
+  .float-y {
+    animation: none !important;
+  }
+  .animated-logo video {
+    display: none;
+  }
+  .animated-logo img {
+    display: block;
+  }
+}
