@@ -1,10 +1,33 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-node_modules/
-dist/
+*.pem
 .cache/
-.env
-.env.local
 .thumbnail
-UGConnect Landing*.html
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# propios del proyecto
 uploads/
 _ds/ugconnect-design-system-*/
+UGConnect Landing*.html

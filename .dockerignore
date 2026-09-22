@@ -1,2 +1,8 @@
 .git
 .DS_Store
+node_modules
+.next
+.env*
+docs
+*.md
+legal

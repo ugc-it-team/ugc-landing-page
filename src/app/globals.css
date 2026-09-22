@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+/*
+  TEMA DE MARCA — único lugar donde viven los colores y las fuentes.
+  Rampa oficial del branding (Branding UGConnect.pdf, p.8); la copia legible de
+  los tokens originales está en docs/design-system/colors.css.
+
+  Ojo al migrar código de la plantilla: allí el morado de marca era #8852a2, que
+  en el branding oficial es el SECUNDARIO. El primario es brand-600 (#5D2978).
+
+  Contraste (AA):
+  - brand-600 (#5D2978) sobre blanco = 9,4:1 → AAA, es el color de texto y botones.
+  - brand-300 (#B78ACD) NUNCA como texto principal sobre blanco (regla del branding).
+  - Sobre fondo oscuro (ink #16101C) usa blanco, brand-300 o brand-200.
+*/
+@theme {
+  --color-brand-50: #f5eff8;
+  --color-brand-100: #e7d6f0;
+  --color-brand-200: #d3b6e2;
+  --color-brand-300: #b78acd; /* acento suave */
+  --color-brand-400: #a571bc;
+  --color-brand-500: #8852a2; /* secundario */
+  --color-brand-600: #5d2978; /* PRIMARIO */
+  --color-brand-700: #4a1f62; /* hover */
+  --color-brand-800: #39164c; /* deep / press */
+  --color-brand-900: #2a0f38;
+  --color-brand-950: #1a0922;
+
+  /* Casi negro con un leve matiz morado. El negro puro es solo del logo. */
+  --color-ink: #16101c;
+  --color-ink-soft: #3a3340;
+  --color-muted: #6b6472; /* texto secundario sobre blanco */
+  --color-line: #e7e2ec; /* bordes de un pelo sobre claro */
+  --color-surface: #fbf9fc; /* lienzo apagado */
+
+  --radius-pill: 999px;
+  --shadow-brand: 0 10px 30px rgb(93 41 120 / 0.32);
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-marquee: marquee 45s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-blob-a: blob-a 34s ease-in-out infinite;
+  --animate-blob-b: blob-b 42s ease-in-out infinite;
+  --animate-blob-c: blob-c 38s ease-in-out infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+  @keyframes blob-a {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(6%, 8%, 0) scale(1.12);
+    }
+  }
+  @keyframes blob-b {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1.05);
+    }
+    50% {
+      transform: translate3d(-8%, 5%, 0) scale(0.95);
+    }
+  }
+  @keyframes blob-c {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(5%, -7%, 0) scale(1.1);
+    }
+  }
+}
+
+/*
+  Fuentes del branding oficial (cargadas con next/font/local en src/lib/fonts.ts):
+  - Titulares: Garet (Book y Heavy).
+  - Cuerpo: Poppins (400/500/600/700/800).
+*/
+@theme inline {
+  --font-display: var(--font-garet), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+  Alias semánticos del design system original. Los mantiene vivos para el CSS
+  heredado (documentos legales) sin duplicar la definición del color: todo
+  apunta al @theme de arriba, que sigue siendo el único origen de verdad.
+*/
+:root {
+  --brand-primary: var(--color-brand-600);
+  --brand-primary-hover: var(--color-brand-700);
+  --brand-primary-press: var(--color-brand-800);
+  --text-strong: var(--color-ink);
+  --text-muted: var(--color-muted);
+  --surface-sunken: var(--color-brand-50);
+  --hairline: var(--color-line);
+  --font-ui: var(--font-sans);
+}
+
+:root {
+  --nav-h: 4.5rem;
+}
+
+html {
+  /* Compensa la barra fija al saltar a un ancla */
+  scroll-padding-top: calc(var(--nav-h) + 0.5rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+/*
+  Scroll suave, pero NO durante la carga inicial.
+
+  Con `scroll-behavior: smooth` en html, el navegador se salta el desplazamiento
+  automático al fragmento al abrir una URL con ancla: entrar a /#planes desde una
+  página legal aterrizaba arriba del todo. Al acotarlo a `:focus-within` no hay nada
+  enfocado mientras carga, así que el salto inicial es instantáneo y funciona; en
+  cuanto el usuario pulsa un enlace, este recibe el foco y el scroll vuelve a ser
+  suave. Cero JavaScript.
+*/
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Foco visible para navegación por teclado */
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--color-brand-300);
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-ink);
+}
+
+/* Marquesina: la pausa al pasar el cursor o enfocar */
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Logo animado del hero: vídeo por defecto, PNG estático con movimiento reducido.
+   El aspect-ratio reserva el hueco para que el hero no provoque CLS al cargar. */
+.animated-logo {
+  aspect-ratio: 1026 / 132;
+}
+.animated-logo img {
+  display: none;
+}
+
+/* Movimiento reducido: sin marquesina, sin manchas, sin flotación, scroll inmediato */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100% !important;
+  }
+  .marquee-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0 !important;
+  }
+  .marquee-dup {
+    display: none !important;
+  }
+  .brand-blob,
+  .float-y {
+    animation: none !important;
+  }
+  .animated-logo video {
+    display: none;
+  }
+  .animated-logo img {
+    display: block;
+  }
+}
