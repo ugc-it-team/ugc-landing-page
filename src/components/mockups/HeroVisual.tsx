@@ -8,12 +8,14 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
+import { ConsoleBoard } from "@/components/mockups/ConsoleBoard";
 import { heroMock, hero } from "@/content/es";
 import { cn } from "@/lib/cn";
 
 /*
-  Composición ilustrativa de la plataforma, hecha solo con HTML/CSS.
-  Los datos (nombres, estados) son de ejemplo, no reales.
+  Ventana de la plataforma. El tablero de dentro NO es una maqueta: está portado del
+  panel real (ver ConsoleBoard). Los datos sí son ficticios, porque el panel contiene
+  personas identificables y marcas de terceros.
   Movimiento: la ventana y las tarjetas flotantes se desplazan a distinta velocidad
   con el scroll (parallax, solo transform) y flotan muy suave.
 */
@@ -27,18 +29,6 @@ function Check({ className }: { className?: string }) {
     </svg>
   );
 }
-
-const stateStyles = {
-  approved: "bg-emerald-50 text-emerald-800",
-  review: "bg-amber-50 text-amber-800",
-  pending: "bg-ink/5 text-muted",
-} as const;
-
-const avatarTints = [
-  "from-brand-400 to-brand-600",
-  "from-brand-300 to-brand-500",
-  "from-brand-200 to-brand-400",
-];
 
 /** Tarjeta flotante: parallax (scroll) > entrada > flotación continua */
 function Float({
@@ -112,70 +102,26 @@ export function HeroVisual() {
             </span>
           </div>
 
-          <div className="grid gap-4 bg-brand-50/60 p-4 text-left sm:grid-cols-[1.05fr_1fr] sm:p-5">
-            {/* Creadores */}
-            <div className="rounded-2xl border border-brand-100 bg-white p-3.5">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
-                {heroMock.creatorsTitle}
-              </p>
-              <ul className="space-y-2.5">
-                {heroMock.creators.map((c, i) => (
-                  <li key={c.name} className="flex items-center gap-3">
-                    <span
-                      className={cn(
-                        "flex size-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-xs font-bold text-white",
-                        avatarTints[i],
-                      )}
-                    >
-                      {c.name[0]}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-sm font-semibold text-ink">{c.name}</span>
-                      <span className="block truncate text-xs text-muted">{c.niche}</span>
-                    </span>
-                    <span
-                      className={cn(
-                        "shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold",
-                        stateStyles[c.state as keyof typeof stateStyles],
-                      )}
-                    >
-                      {heroMock.stateLabels[c.state as keyof typeof heroMock.stateLabels]}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              {/* Avance (sin cifras: es ilustrativo) */}
-              <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-brand-100">
-                <div className="h-full w-3/5 rounded-full bg-gradient-to-r from-brand-400 to-brand-500" />
-              </div>
-            </div>
+          {/* Pestañas de la campaña, como en el panel */}
+          <div className="flex items-center gap-4 border-b border-brand-100 bg-white px-4 pb-2.5 text-[11px] sm:px-5">
+            {heroMock.tabs.map((tab, i) => (
+              <span
+                key={tab}
+                className={cn(
+                  "whitespace-nowrap pb-1.5",
+                  i === heroMock.activeTab
+                    ? "border-b-2 border-brand-600 font-semibold text-brand-600"
+                    : "text-muted",
+                )}
+              >
+                {tab}
+              </span>
+            ))}
+          </div>
 
-            {/* Tablero */}
-            <div className="hidden rounded-2xl border border-brand-100 bg-white p-3.5 sm:block">
-              <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-muted">
-                {heroMock.boardTitle}
-              </p>
-              <div className="grid grid-cols-3 gap-2">
-                {heroMock.columns.map((col, ci) => (
-                  <div key={col} className="space-y-2">
-                    <p className="truncate text-[11px] font-semibold text-ink">{col}</p>
-                    {Array.from({ length: ci === 1 ? 2 : 1 }).map((_, k) => (
-                      <div
-                        key={k}
-                        className="space-y-1.5 rounded-lg border border-brand-100 bg-brand-50/70 p-2"
-                      >
-                        <div className="h-1.5 w-4/5 rounded-full bg-brand-200" />
-                        <div className="h-1.5 w-3/5 rounded-full bg-brand-100" />
-                        <div className="flex items-center justify-between pt-1">
-                          <span className="size-4 rounded-full bg-gradient-to-br from-brand-300 to-brand-500" />
-                          {ci === 2 && <Check className="size-3.5 text-emerald-600" />}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Tablero de la campaña, portado del panel real */}
+          <div className="bg-brand-50/60 p-4 text-left sm:p-5">
+            <ConsoleBoard />
           </div>
         </m.div>
       </m.div>
@@ -185,7 +131,7 @@ export function HeroVisual() {
         y={reduce ? undefined : yBrief}
         delay={0.9}
         floatDelay="0s"
-        className="hidden sm:-left-2 sm:top-16 sm:block sm:w-56 xl:-left-14"
+        className="hidden sm:-left-6 sm:-top-6 sm:block sm:w-52 xl:-left-24 xl:w-56"
       >
         <div className={card}>
           <div className="flex items-center gap-2.5">
@@ -207,7 +153,7 @@ export function HeroVisual() {
         y={reduce ? undefined : yApproved}
         delay={1.1}
         floatDelay="-2.4s"
-        className="hidden sm:-right-3 sm:top-[46%] sm:block sm:w-44 xl:-right-14 xl:w-52"
+        className="hidden sm:-right-6 sm:top-[80%] sm:block sm:w-44 xl:-right-24 xl:w-52"
       >
         <div className={card}>
           <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-brand-500 via-brand-400 to-brand-300">
@@ -234,7 +180,7 @@ export function HeroVisual() {
         y={reduce ? undefined : yChat}
         delay={1.3}
         floatDelay="-4.2s"
-        className="-bottom-9 left-3 w-60 sm:bottom-[-2.25rem] sm:left-10 sm:w-72"
+        className="-bottom-12 left-3 w-60 sm:bottom-[-4rem] sm:left-4 sm:w-72"
       >
         <div className={card}>
           <div className="flex items-start gap-2.5">

@@ -84,6 +84,9 @@ export const heroMock = {
   },
   boardTitle: "Tablero",
   columns: ["Brief", "Producción", "Aprobado"],
+  // Pestañas de la vista de campaña, tal como aparecen en el panel real.
+  tabs: ["Resumen", "Sugeridos", "Postulaciones", "Aceptados", "Avances"],
+  activeTab: 4,
   floatBrief: { title: "Brief enviado", text: "3 creadores recomendados" },
   floatApproved: { title: "Contenido aprobado", chip: "Pago liberado" },
   floatChat: {
