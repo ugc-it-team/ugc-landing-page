@@ -53,9 +53,17 @@ profundos ya publicados: no los "limpies" ni añadas `rehype-slug`.
 
 ## Verificación de TikTok
 
-El archivo de firma ya está en `public/tiktokmojI5cmvy9vkQzI7mlyiBHGKQl08qHd4.txt` y se sirve en
-la raíz. **No lo borres:** TikTok revalida cada cierto tiempo y si desaparece el dominio queda sin
-verificar, lo que tumba la revisión de la app.
+Los archivos de firma viven en `public/` y se sirven en la raíz. Hay **dos**, uno por propiedad
+verificada:
+
+```
+public/tiktokmojI5cmvy9vkQzI7mlyiBHGKQl08qHd4.txt
+public/tiktok870r2gNpMYR5FtKFfwrkog8eZy01KXP7.txt
+```
+
+**No borres ninguno, ni siquiera el más antiguo.** TikTok revalida cada propiedad por separado y
+cada archivo responde por la suya: si falta uno, esa propiedad queda sin verificar y tumba la
+revisión de la app. Cuando TikTok entregue nuevos archivos, se añaden — no se sustituyen.
 
 Queda pendiente:
 
