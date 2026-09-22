@@ -37,8 +37,21 @@ export function StepVideo({ src, poster, className, bare, load = true }: StepVid
     const v = ref.current;
     if (!v) return;
     v.muted = true;
-    if (load && inView && !reduce) v.play().catch(() => {});
-    else v.pause();
+
+    const debeReproducir = () => load && inView && !reduce;
+    const intentar = () => {
+      if (debeReproducir() && v.paused) v.play().catch(() => {});
+    };
+
+    if (debeReproducir()) {
+      intentar();
+      // Con `preload="none"` el vídeo no tiene datos cuando se pide el play y el
+      // navegador lo rechaza; al llegar `canplay` ya sí puede arrancar.
+      v.addEventListener("canplay", intentar);
+      return () => v.removeEventListener("canplay", intentar);
+    }
+
+    v.pause();
   }, [load, inView, reduce]);
 
   return (

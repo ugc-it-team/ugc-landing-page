@@ -40,6 +40,11 @@ export function AnimatedLogo({ className }: AnimatedLogoProps) {
     if (!video) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    // Safari e iOS solo permiten autoplay si el vídeo está silenciado, y React no
+    // siempre refleja `muted` como atributo al hidratar. Forzarlo por propiedad es lo
+    // que hace StepVideo desde el principio; aquí faltaba.
+    video.muted = true;
+
     const resume = () => {
       if (document.visibilityState === "visible" && video.paused) {
         video.play().catch(() => {});
@@ -47,8 +52,14 @@ export function AnimatedLogo({ className }: AnimatedLogoProps) {
     };
 
     resume();
+    // Si `play()` se llama antes de que haya datos, el navegador lo rechaza. Reintentar
+    // en cuanto el vídeo puede reproducirse cubre ese caso y el del autoplay diferido.
+    video.addEventListener("canplay", resume);
     document.addEventListener("visibilitychange", resume);
-    return () => document.removeEventListener("visibilitychange", resume);
+    return () => {
+      video.removeEventListener("canplay", resume);
+      document.removeEventListener("visibilitychange", resume);
+    };
   }, []);
 
   // El `mx-auto` del contenedor es el que centra: es quien recibe el max-w que pasa
