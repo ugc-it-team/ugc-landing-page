@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/cn";
 
-const WEBM = "/brand/ugconnect-logo-animado.webm";
 const MP4 = "/brand/ugconnect-logo-animado.mp4";
 const STATIC = "/brand/ugconnect-logo-estatico.png";
 const W = 1026;
@@ -82,12 +81,9 @@ export function AnimatedLogo({ className }: AnimatedLogoProps) {
         playsInline
         aria-label={alt}
       >
-        {/* El códec va explícito a propósito. Sin él, Safari puede dar por bueno el
-            WebM, quedárselo y fallar al decodificar VP9, sin caer nunca al MP4 de
-            respaldo. Declarándolo puede descartarlo y pasar al siguiente source. */}
-        <source src={WEBM} type='video/webm; codecs="vp9"' />
-        {/* El respaldo va sin `codecs` a propósito: una cadena mal puesta haría que
-            Safari lo rechazara también y nos quedaríamos sin vídeo. */}
+        {/* Una sola fuente: H.264 perfil Main a 25 fps. Antes habia tambien un WebM
+            VP9, pero Safari no lo decodifica y ademas pesaba mas que este MP4, asi
+            que no aportaba nada y solo añadia negociacion de codecs que fallaba. */}
         <source src={MP4} type="video/mp4" />
       </video>
       {/* eslint-disable-next-line @next/next/no-img-element */}
