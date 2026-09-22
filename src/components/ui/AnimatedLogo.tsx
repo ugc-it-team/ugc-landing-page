@@ -82,7 +82,12 @@ export function AnimatedLogo({ className }: AnimatedLogoProps) {
         playsInline
         aria-label={alt}
       >
-        <source src={WEBM} type="video/webm" />
+        {/* El códec va explícito a propósito. Sin él, Safari puede dar por bueno el
+            WebM, quedárselo y fallar al decodificar VP9, sin caer nunca al MP4 de
+            respaldo. Declarándolo puede descartarlo y pasar al siguiente source. */}
+        <source src={WEBM} type='video/webm; codecs="vp9"' />
+        {/* El respaldo va sin `codecs` a propósito: una cadena mal puesta haría que
+            Safari lo rechazara también y nos quedaríamos sin vídeo. */}
         <source src={MP4} type="video/mp4" />
       </video>
       {/* eslint-disable-next-line @next/next/no-img-element */}
