@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
   m,
+  useInView,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
@@ -65,6 +66,15 @@ export function HowItWorks() {
 
   // El cuadro lila se ajusta a la proporción del video (que se ve completo, sin recortes):
   // mide su ancho y calcula la altura exacta. Con la maqueta del paso 4 recupera su altura normal.
+  /**
+   * Los tres pósters suman 130 KB y `poster` se descarga en cuanto está en el marcado,
+   * aunque el vídeo no se reproduzca. La condición va en la SECCIÓN, no en cada vídeo:
+   * en escritorio el panel pegajoso monta y desmonta el StepVideo al cambiar de paso, así
+   * que un observador atado al propio elemento no sobrevive a ese ciclo.
+   */
+  const sectionRef = useRef<HTMLElement>(null);
+  const cargarVideos = useInView(sectionRef, { margin: "600px", once: true });
+
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelW, setPanelW] = useState(0);
   useEffect(() => {
@@ -82,6 +92,7 @@ export function HowItWorks() {
 
   return (
     <section
+      ref={sectionRef}
       id="como-funciona"
       aria-labelledby="como-funciona-title"
       className="relative bg-brand-50"
@@ -197,7 +208,7 @@ export function HowItWorks() {
                       // Pasos con video: cubre todo el recuadro, con sus mismas esquinas redondeadas.
                       // Se reproduce solo el del paso activo (el panel se vuelve a montar al cambiar).
                       <div className="h-full overflow-hidden rounded-[calc(2rem-1px)]">
-                        <StepVideo bare src={activeVideo.src} poster={activeVideo.poster} />
+                        <StepVideo bare load={cargarVideos} src={activeVideo.src} poster={activeVideo.poster} />
                       </div>
                     ) : (
                       <ActiveMock />
@@ -253,7 +264,7 @@ export function HowItWorks() {
                       video ? "overflow-hidden" : "p-3 sm:p-5",
                     )}
                   >
-                    {video ? <StepVideo bare src={video.src} poster={video.poster} /> : <Mock />}
+                    {video ? <StepVideo bare load={cargarVideos} src={video.src} poster={video.poster} /> : <Mock />}
                   </div>
                 </Reveal>
               </li>

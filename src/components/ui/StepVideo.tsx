@@ -13,6 +13,12 @@ type StepVideoProps = {
   className?: string;
   /** Sin tarjeta propia (borde, esquinas, sombra): el video llena por completo el recuadro que lo contiene. */
   bare?: boolean;
+  /**
+   * Hasta que no sea true no se adjuntan `src` ni `poster`, para no descargar 130 KB de
+   * pósters en la carga inicial. Lo decide la sección (ver HowItWorks): aquí no sirve,
+   * porque en escritorio este componente se monta y desmonta al cambiar de paso.
+   */
+  load?: boolean;
 };
 
 /**
@@ -22,7 +28,7 @@ type StepVideoProps = {
  * - "muted" se fuerza por código: sin eso, iPhone/Safari no permiten la reproducción automática.
  * - Es decorativo: el texto del paso ya explica lo que muestra (por eso aria-hidden).
  */
-export function StepVideo({ src, poster, className, bare }: StepVideoProps) {
+export function StepVideo({ src, poster, className, bare, load = true }: StepVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const inView = useInView(ref, { amount: 0.3 });
   const reduce = useReducedMotion();
@@ -31,9 +37,9 @@ export function StepVideo({ src, poster, className, bare }: StepVideoProps) {
     const v = ref.current;
     if (!v) return;
     v.muted = true;
-    if (inView && !reduce) v.play().catch(() => {});
+    if (load && inView && !reduce) v.play().catch(() => {});
     else v.pause();
-  }, [inView, reduce]);
+  }, [load, inView, reduce]);
 
   return (
     <div
@@ -47,12 +53,12 @@ export function StepVideo({ src, poster, className, bare }: StepVideoProps) {
         ref={ref}
         // Misma proporción que el video (1600×910 = la grabación original completa): sin recortes
         className={cn("block aspect-[1600/910] w-full", className)}
-        src={src}
-        poster={poster}
+        src={load ? src : undefined}
+        poster={load ? poster : undefined}
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         disablePictureInPicture
         disableRemotePlayback
         aria-hidden
