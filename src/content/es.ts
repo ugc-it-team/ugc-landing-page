@@ -47,6 +47,8 @@ export const hero = {
   primaryCta: "Contáctanos",
   secondaryCta: "Ver cómo funciona",
   note: "Pensada para marcas que quieren elevar sus ventas y conversiones en sus espacios digitales",
+  // Etiqueta de la franja compacta de logos de clientes en el hero (distinta a `clients` de más abajo).
+  clientsLabel: "Marcas que ya confían en nosotros",
   visualLabel:
     "Vista ilustrativa de la plataforma: campaña, creadores y estados de aprobación",
 };
@@ -87,12 +89,12 @@ export const heroMock = {
   // Pestañas de la vista de campaña, tal como aparecen en el panel real.
   tabs: ["Resumen", "Sugeridos", "Postulaciones", "Aceptados", "Avances"],
   activeTab: 4,
-  floatBrief: { title: "Brief enviado", text: "3 creadores recomendados" },
-  floatApproved: { title: "Contenido aprobado", chip: "Pago liberado" },
+  floatApplications: { title: "Nueva postulación", text: "Camila T. quiere unirse a tu campaña" },
   floatChat: {
-    author: "Equipo UGConnect",
-    text: "Te recomendamos tres perfiles según tu brief. ¿Los revisamos juntos?",
+    author: "Diego R.",
+    text: "Subí el borrador del video, ¿lo revisamos juntos?",
   },
+  floatInvite: { title: "Invitar creador", text: "Búscalo por nicho y súmalo a tu campaña" },
 };
 
 /* ───────────── 3. El puente entre marcas y creadores ───────────── */

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ContactButton } from "@/components/ui/ContactButton";
 import { BrandBlobs } from "@/components/ui/BrandBlobs";
@@ -6,7 +7,23 @@ import { Reveal } from "@/components/ui/Reveal";
 import { HeroVisual } from "@/components/mockups/HeroVisual";
 import { AvatarStack } from "@/components/ui/AvatarStack";
 import { AnimatedLogo } from "@/components/ui/AnimatedLogo";
-import { hero, marquee, stats } from "@/content/es";
+import { hero, marquee, stats, clients } from "@/content/es";
+import { siteConfig } from "@/site.config";
+
+/** Cuántos logos entran en la fila estática (sm+) antes de saturarla. En mobile van todos en marquesina. */
+const HERO_CLIENTS_COUNT = 6;
+
+function HeroClientLogo({ logo }: { logo: (typeof clients.logos)[number] }) {
+  return (
+    <Image
+      src={logo.src}
+      alt={logo.name}
+      width={logo.width}
+      height={logo.height}
+      className="h-10 w-auto max-w-[7rem] object-contain opacity-75 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-14 sm:max-w-[11rem]"
+    />
+  );
+}
 
 export function Hero() {
   return (
@@ -77,6 +94,46 @@ export function Hero() {
         <Reveal delay={0.36}>
           <p className="mx-auto mt-5 max-w-lg text-balance text-sm text-muted">{hero.note}</p>
         </Reveal>
+
+        {/* Franja compacta de clientes: mismo dato que la sección `Clients` de más abajo,
+            pero reducida. En mobile no entran los logos grandes en una fila sin amontonarse,
+            así que corren en marquesina (mismo patrón CSS que `Clients`/`Marquee`); de sm en
+            adelante hay espacio de sobra y van estáticos y centrados. */}
+        {siteConfig.features.clients && clients.logos.length > 0 && (
+          <Reveal delay={0.42}>
+            <div className="mx-auto mt-10 max-w-4xl">
+              <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+                {hero.clientsLabel}
+              </p>
+
+              <div className="marquee mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)] sm:hidden">
+                <div className="marquee-track flex w-max animate-marquee will-change-transform">
+                  {[false, true].map((hiddenHalf) => (
+                    <ul
+                      key={hiddenHalf ? "dup" : "main"}
+                      aria-hidden={hiddenHalf || undefined}
+                      className="marquee-list flex min-w-screen shrink-0 items-center justify-around gap-10 pr-10"
+                    >
+                      {clients.logos.map((logo) => (
+                        <li key={`${hiddenHalf ? "dup" : "main"}-${logo.name}`} className="flex h-12 shrink-0 items-center">
+                          <HeroClientLogo logo={logo} />
+                        </li>
+                      ))}
+                    </ul>
+                  ))}
+                </div>
+              </div>
+
+              <ul className="mt-6 hidden flex-wrap items-center justify-center gap-x-12 gap-y-6 sm:flex">
+                {clients.logos.slice(0, HERO_CLIENTS_COUNT).map((logo) => (
+                  <li key={logo.name} className="flex h-16 items-center">
+                    <HeroClientLogo logo={logo} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        )}
       </div>
 
       <HeroVisual />

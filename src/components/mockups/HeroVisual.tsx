@@ -22,14 +22,6 @@ import { cn } from "@/lib/cn";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-function Check({ className }: { className?: string }) {
-  return (
-    <svg aria-hidden viewBox="0 0 20 20" className={className} fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m4.5 10.5 3.5 3.5 7.5-8" />
-    </svg>
-  );
-}
-
 /** Tarjeta flotante: parallax (scroll) > entrada > flotación continua */
 function Float({
   y,
@@ -126,7 +118,7 @@ export function HeroVisual() {
         </m.div>
       </m.div>
 
-      {/* Flotante: brief enviado */}
+      {/* Flotante: notificación de postulación */}
       <Float
         y={reduce ? undefined : yBrief}
         delay={0.9}
@@ -137,45 +129,39 @@ export function HeroVisual() {
           <div className="flex items-center gap-2.5">
             <span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white">
               <svg aria-hidden viewBox="0 0 20 20" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 5h12v9H8l-4 3V5Z" />
+                <path d="M10 3.5c-2.5 0-4 1.8-4 4.2v2.4c0 .5-.2 1-.6 1.4l-.9.9c-.5.5-.2 1.4.5 1.4h9.9c.7 0 1-.9.5-1.4l-.9-.9c-.4-.4-.6-.9-.6-1.4V7.7c0-2.4-1.5-4.2-4-4.2Z" />
+                <path d="M8.3 15.5a1.8 1.8 0 0 0 3.4 0" />
               </svg>
             </span>
             <div className="min-w-0">
-              <p className="truncate text-xs font-bold text-ink">{heroMock.floatBrief.title}</p>
-              <p className="truncate text-[11px] text-muted">{heroMock.floatBrief.text}</p>
+              <p className="truncate text-xs font-bold text-ink">{heroMock.floatApplications.title}</p>
+              <p className="truncate text-[11px] text-muted">{heroMock.floatApplications.text}</p>
             </div>
           </div>
         </div>
       </Float>
 
-      {/* Flotante: contenido aprobado */}
+      {/* Flotante: chat con el creador */}
       <Float
         y={reduce ? undefined : yApproved}
         delay={1.1}
         floatDelay="-2.4s"
-        className="hidden sm:-right-6 sm:top-[80%] sm:block sm:w-44 xl:-right-24 xl:w-52"
+        className="hidden sm:-right-6 sm:top-full sm:mt-4 sm:block sm:w-52 xl:-right-24 xl:w-60"
       >
         <div className={card}>
-          <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-brand-500 via-brand-400 to-brand-300">
-            <span className="flex size-9 items-center justify-center rounded-full bg-white/95 text-brand-600">
-              <svg aria-hidden viewBox="0 0 20 20" className="ml-0.5 size-4" fill="currentColor">
-                <path d="M6 4.5v11l9-5.5-9-5.5Z" />
-              </svg>
+          <div className="flex items-start gap-2.5">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand-600 text-[10px] font-semibold text-white">
+              DR
             </span>
+            <div className="min-w-0">
+              <p className="text-[11px] font-bold text-brand-700">{heroMock.floatChat.author}</p>
+              <p className="mt-0.5 text-xs leading-snug text-ink">{heroMock.floatChat.text}</p>
+            </div>
           </div>
-          <div className="mt-2.5 flex items-center justify-between gap-2">
-            <p className="flex items-center gap-1 text-xs font-bold text-ink">
-              <Check className="size-3.5 shrink-0 text-emerald-600" />
-              <span className="truncate">{heroMock.floatApproved.title}</span>
-            </p>
-          </div>
-          <p className="mt-1.5 inline-flex rounded-full bg-brand-100 px-2 py-0.5 text-[11px] font-semibold text-brand-700">
-            {heroMock.floatApproved.chip}
-          </p>
         </div>
       </Float>
 
-      {/* Flotante: el equipo acompaña (diferencial) */}
+      {/* Flotante: invitar creador */}
       <Float
         y={reduce ? undefined : yChat}
         delay={1.3}
@@ -183,13 +169,17 @@ export function HeroVisual() {
         className="-bottom-12 left-3 w-60 sm:bottom-[-4rem] sm:left-4 sm:w-72"
       >
         <div className={card}>
-          <div className="flex items-start gap-2.5">
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink text-[11px] font-bold text-white">
-              UG<span className="text-brand-300">.</span>
+          <div className="flex items-center gap-2.5">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-ink text-white">
+              <svg aria-hidden viewBox="0 0 20 20" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="8" cy="7" r="3" />
+                <path d="M2.5 16.5c0-2.8 2.5-5 5.5-5s5.5 2.2 5.5 5" />
+                <path d="M15.5 6.5v5M13 9h5" />
+              </svg>
             </span>
             <div className="min-w-0">
-              <p className="text-[11px] font-bold text-brand-700">{heroMock.floatChat.author}</p>
-              <p className="mt-0.5 text-xs leading-snug text-ink">{heroMock.floatChat.text}</p>
+              <p className="truncate text-xs font-bold text-ink">{heroMock.floatInvite.title}</p>
+              <p className="truncate text-[11px] text-muted">{heroMock.floatInvite.text}</p>
             </div>
           </div>
         </div>
