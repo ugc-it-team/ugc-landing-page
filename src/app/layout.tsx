@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { MotionProvider } from "@/components/ui/MotionProvider";
+import { MetaPixelConsent } from "@/components/MetaPixelConsent";
 import { garet, poppins } from "@/lib/fonts";
 import { siteConfig } from "@/site.config";
 import { meta } from "@/content/es";
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Saltar al contenido
         </a>
         <MotionProvider>{children}</MotionProvider>
+        <MetaPixelConsent />
       </body>
     </html>
   );
